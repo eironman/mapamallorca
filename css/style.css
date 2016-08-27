@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html, body{
+  height: 96%;
+}
+#app, #mapBox, #map {
+  height: 100%;
+}
+.h100 {
+  height: 100%;
+}
+#opacity-container {
+  position: absolute;
+  z-index: 1;
+  top: 64px;
+  right: 19%;
+  padding: 0px 4px;
+  background-color: #eceff1;
+  width: 200px;
+}
+
+/********** Materialize *********/
+input[type=range] {
+  border: none;
+}
+
+input[type=range]+.thumb.active {
+  display: none;
+}
