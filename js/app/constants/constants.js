@@ -22,10 +22,11 @@ export const INFOWINDOW_TEMPLATE =
 
 // Points of interest
 export const POIS = {
-  CITY_WALL       : 0,
-  BULLFIGHT       : 1,
-  WINDMILLS       : 2,
-  TALLEST_BUILDING: 3
+  CITY_WALL     : 0,
+  BULLFIGHT     : 1,
+  BULLFIGHT_1865: 2,
+  WINDMILLS     : 3,
+  TORRE_ES_FORTI: 4
 };
 
 // Bounding box of the map correspondig to the year selected

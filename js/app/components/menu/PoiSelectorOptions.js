@@ -33,7 +33,15 @@ class PoiSelectorOptions extends Component {
             href="javascript:void(0)"
             onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }
           >
-            Plaza de toros (actual)
+            Coliseo Balear
+          </a>
+        </li>
+        <li className={ this.isSelected(POIS.BULLFIGHT_1865) ? 'active' : '' }>
+          <a
+            href="javascript:void(0)"
+            onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
+          >
+            Plaza de toros (1865)
           </a>
         </li>
         <li className={ this.isSelected(POIS.TALLEST_BUILDING) ? 'active' : '' }>

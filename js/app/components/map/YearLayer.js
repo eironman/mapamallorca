@@ -40,7 +40,7 @@ class YearLayer extends Component {
       
       // Actual layer
       this.yearLayer = L.tileLayer(
-        'http://www.in.mapllorca.com/tiles/' + this.props.yearSelected + '/{z}/{x}/{y}.png',
+        'http://www.in.mapamallorca.com/tiles/' + this.props.yearSelected + '/{z}/{x}/{y}.png',
         {
           minZoom: 14,
           maxZoom: 18,

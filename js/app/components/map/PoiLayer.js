@@ -4,6 +4,7 @@ import { arrayContains } from '../..//helpers/arrayHelper';
 import { POIS, CARTODB_USER } from '../../constants/constants';
 import CityWall from './pois/CityWall';
 import Bullfight from './pois/Bullfight';
+import Bullfight1865 from './pois/Bullfight1865';
 import TallestBuilding from './pois/TallestBuilding';
 import Windmill from './pois/Windmill';
 
@@ -19,8 +20,7 @@ class PoiLayer extends Component {
     // City wall
     if (arrayContains(this.props.poisSelected, POIS.CITY_WALL)) {
       pois.push(
-        <CityWall
-          key={ POIS.CITY_WALL }
+        <CityWall key={ '' }
           mapInstance={ this.props.mapInstance }
         />
       );
@@ -31,6 +31,16 @@ class PoiLayer extends Component {
       pois.push(
         <Bullfight
           key={ POIS.BULLFIGHT }
+          mapInstance={ this.props.mapInstance }
+        />
+      );
+    }
+
+    // Bullfight 1865
+    if (arrayContains(this.props.poisSelected, POIS.BULLFIGHT_1865)) {
+      pois.push(
+        <Bullfight1865
+          key={ POIS.BULLFIGHT_1865 }
           mapInstance={ this.props.mapInstance }
         />
       );
