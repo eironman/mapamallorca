@@ -14,32 +14,35 @@ class YearSelector extends Component {
   render() {
 
     return (
-      <span>
-        <li className={ this.props.yearSelected === null ? 'active' : '' }>
-          <a
-            href="javascript:void(0)"
-            onClick={ () => this.handleYearSelect(null) }
-          >
-            Año actual
-          </a>
-        </li>
-        <li className={ this.props.yearSelected === 1644 ? 'active' : '' }>
-          <a
-            href="javascript:void(0)"
-            onClick={ () => this.handleYearSelect(1644) }
-          >
-            1644
-          </a>
-        </li>
-        <li className={ this.props.yearSelected === 1869 ? 'active' : '' }>
-          <a
-            href="javascript:void(0)"
-            onClick={ () => this.handleYearSelect(1869) }
-          >
-            1869
-          </a>
-        </li>
-      </span>
+      <li>
+        <a href="javascript:void(0)">Selecciona un año</a>
+        <ul>
+          <li>
+            <a
+              href="javascript:void(0)"
+              onClick={ () => this.handleYearSelect(null) }
+            >
+              Año actual
+            </a>
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              onClick={ () => this.handleYearSelect(1644) }
+            >
+              1644
+            </a>
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              onClick={ () => this.handleYearSelect(1869) }
+            >
+              1869
+            </a>
+          </li>
+        </ul>
+      </li>
     );
   }
 }

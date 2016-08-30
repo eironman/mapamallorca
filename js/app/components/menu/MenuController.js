@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import YearSelector from './YearSelector';
 import PoiSelector from './PoiSelector';
-import PoiSelectorOptions from './PoiSelectorOptions';
 
 /**
 * Menu with the actions to perform in the map
@@ -9,34 +8,18 @@ import PoiSelectorOptions from './PoiSelectorOptions';
 export default class MenuController extends Component {
 
   componentDidMount() {
-    $(".button-collapse").sideNav();
+    $(".flexnav").flexNav();
   }
 
   render() {
     return (
-      <div className="navbar-fixed">
-        
-        <ul id="poi-dropdown" className="dropdown-content">
-          <PoiSelectorOptions />
-        </ul>
-
+      <div>
+        <div className="menu-button">Menu</div>
         <nav>
-          <div className="nav-wrapper blue">
-            <a href="#" data-activates="mobile-demo" className="button-collapse">
-              <i className="material-icons">menu</i>
-            </a>
-            
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <YearSelector />
-              <PoiSelector />
-            </ul>
-
-            <ul id="mobile-demo" className="side-nav">
-              <YearSelector />
-              <li className="divider"></li>
-              <PoiSelectorOptions />
-            </ul>
-          </div>
+          <ul data-breakpoint="800" className="flexnav">
+            <YearSelector />
+            <PoiSelector />
+          </ul>
         </nav>
       </div>
     );
