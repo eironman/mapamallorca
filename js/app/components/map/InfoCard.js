@@ -5,7 +5,9 @@ import React, { Component, PropTypes } from 'react';
 **/
 export default class InfoCard extends Component {
 
-  handleToggleInfoClick() {
+  // Shows/hides the info
+  handleToggleInfoClick()
+  {
     const cardContent = $(".infoCardContent");
     cardContent.toggle(500, () => {
       if ( cardContent.css('display') === 'none' ) {
@@ -16,17 +18,21 @@ export default class InfoCard extends Component {
     });
   }
 
-  componentDidMount() {
-    
+  // Loads the info content
+  loadContent(title, text)
+  {
+    $(".infoCardContentTitle").html(title);
+    $(".infoCardContentText").html(text);
+    $("#infoCard").show(500);
   }
 
-  render() {
-    console.log(this.props.query);
+  render()
+  {
     return (
       <div id="infoCard">
         <div className="infoCardContent">
-          <h2>MURALLA RENACENTISTA</h2>
-          <p>Muralla iniciada en 1545 que venía a renovar la antigua muralla medieval. La obra culmina a comienzos del siglo XIX. Fue financiada en su mayor parte por la Corona y era la de mayor envergadura de las construidas en España. Tenía más de 5km de longitud. El proyecto final, en 1575, fue desarrollado por el ingeniero italiano Jacobo Paleazzo.</p>
+          <h2 className="infoCardContentTitle"></h2>
+          <p className="infoCardContentText"></p>
         </div>
         <div
           className="toggleInfoCard"
@@ -37,8 +43,4 @@ export default class InfoCard extends Component {
       </div>
     );
   }
-}
-
-InfoCard.propTypes = {
-  query: PropTypes.string
 }

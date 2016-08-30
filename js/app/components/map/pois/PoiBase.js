@@ -33,13 +33,13 @@ export default class PoiBase extends Component {
       });
   }
 
-  // Retrieves the POI info and shows it in the map panel
+  // Retrieves the POI info and shows it in the info card
   showPoiInfo(bounds) {
 
-    // Retrieve data to show in the panel
+    // Retrieve data to show in the info card
     this.sql.execute(this.query)
       .done((data) => {
-        console.log(data.rows[0]);
+        this.refs.infoCard.loadContent(data.rows[0].name, data.rows[0].description);
       });
   }
 
@@ -114,7 +114,7 @@ export default class PoiBase extends Component {
 
   render()
   {
-    return (<InfoCard query={ this.query } />);
+    return (<InfoCard ref={ 'infoCard' } query={ this.query } />);
   }
 }
 
