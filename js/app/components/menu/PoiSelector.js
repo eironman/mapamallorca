@@ -13,10 +13,6 @@ class PoiSelectorOptions extends Component {
     this.props.dispatch(selectPoi(poi));
   }
 
-  isSelected(poi) {
-    return (arrayContains(this.props.poisSelected ,poi));
-  }
-
   render() {
     return (
       <li>
@@ -29,7 +25,7 @@ class PoiSelectorOptions extends Component {
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }
             >
-              Muralla
+              Muralla Renacentista
             </a>
           </li>
           <li>
@@ -51,7 +47,7 @@ class PoiSelectorOptions extends Component {
           <li>
             <a
               href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.TALLEST_BUILDING) }
+              onClick={ () => this.handlePoiSelect(POIS.TORRE_ES_FORTI) }
             >
               Edificio más alto
             </a>
@@ -70,11 +66,4 @@ class PoiSelectorOptions extends Component {
   }
 }
 
-// Connect class to redux
-const mapStateToProps = (state) => {
-  return {
-    poisSelected: state.mapReducer.poisSelected
-  };
-};
-
-export default connect(mapStateToProps)(PoiSelectorOptions);
+export default connect()(PoiSelectorOptions);

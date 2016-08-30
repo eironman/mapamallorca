@@ -7,7 +7,7 @@ import { arrayContains, removeFromArray } from '../helpers/arrayHelper';
 const mapInitialState = {
   mapInstance : null,
   yearSelected: null,
-  poisSelected: []
+  poiSelected : null
 };
 
 /**
@@ -28,16 +28,8 @@ export function mapReducer(state = mapInitialState, action) {
       });
 
     case MAP_ACTIONS.SELECT_POI:
-      let newPoi;
-      if (!arrayContains(state.poisSelected, action.poi)) {
-        newPoi = state.poisSelected.slice();
-        newPoi.push(action.poi);
-      } else {
-        newPoi = removeFromArray(state.poisSelected.slice(), action.poi);
-      }
-
       return Object.assign({}, state, {
-        poisSelected: newPoi
+        poiSelected: action.poi
       });
 
     default:

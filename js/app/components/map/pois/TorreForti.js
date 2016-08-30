@@ -5,12 +5,12 @@ import { CARTODB_SPOT_TABLE } from '../../../constants/constants';
 /**
 * Points in the map the tallest building
 **/
-export default class TallestBuilding extends PoiBase {
+export default class TorreForti extends PoiBase {
 
 }
 
 // Id in cartoDB
-TallestBuilding.defaultProps = {
+TorreForti.defaultProps = {
   poiId       : 1,
   cartodbTable: CARTODB_SPOT_TABLE
 }
