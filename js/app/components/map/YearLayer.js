@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react';
 import YearLayerOpacity from './YearLayerOpacity';
 import { PALMA_LAT, PALMA_LNG, YEAR_BB_COORDS } from '../../constants/constants';
 
 /**
 * Displays in the map the layer of the year selected
 **/
-class YearLayer extends Component {
+export default class YearLayer extends Component {
 
   constructor()
   {
@@ -57,8 +56,8 @@ class YearLayer extends Component {
     }
   }
 
-  render() {
-
+  render()
+  {
     if (this.props.mapInstance !== null) {
 
       // Add map of the year selected
@@ -73,12 +72,8 @@ class YearLayer extends Component {
   }
 }
 
-// Connect class to redux
-const mapStateToProps = (state) => {
-  return {
-    mapInstance : state.mapReducer.mapInstance,
-    yearSelected: state.mapReducer.yearSelected
-  };
+// Class properties
+YearLayer.propTypes = {
+  yearSelected: PropTypes.number,
+  mapInstance : PropTypes.object
 };
-
-export default connect(mapStateToProps)(YearLayer);

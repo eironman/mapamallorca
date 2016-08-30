@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import InfoCard from '../InfoCard';
 import {
   CARTODB_USER,
   INFOWINDOW_TEMPLATE,
@@ -28,32 +29,17 @@ export default class PoiBase extends Component {
     this.sql.getBounds(this.query)
       .done((bounds) => {
         this.props.mapInstance.fitBounds(bounds, { maxZoom: (this.isShape ? 16 : 18)});
-        this.triggerInfowindow(bounds);
+        this.showPoiInfo(bounds);
       });
   }
 
-  // Shows the infowindow
-  // The point to simulate the click event is calculated using
-  // the coords of the bounding box
-  triggerInfowindow(bounds) {
+  // Retrieves the POI info and shows it in the map panel
+  showPoiInfo(bounds) {
 
-    // Calculate coords
-    const latLngNE = bounds[0];
-    const latLngSW = bounds[1];
-    const latLng = [((latLngNE[0] + latLngSW[0]) / 2), ((latLngNE[1] + latLngSW[1]) / 2)];
-
-    // Retrieve data to show in the infowindow
+    // Retrieve data to show in the panel
     this.sql.execute(this.query)
       .done((data) => {
-        
-        const infowindowData = {
-          name       : data.rows[0].name,
-          description: data.rows[0].description
-        };
-
-        this.poiLayer
-          .getSubLayer(0)
-          .trigger('featureClick', null, latLng, null, infowindowData, 0);
+        console.log(data.rows[0]);
       });
   }
 
@@ -66,7 +52,7 @@ export default class PoiBase extends Component {
 
       styles =
         '#shape {' +
-          'polygon-fill: #0d47a1;' +
+          'polygon-fill: #7B00B4;' +
           'polygon-opacity: 0.9;' +
           'line-color: #FFF;' +
           'line-width: 0.5;' +
@@ -83,8 +69,8 @@ export default class PoiBase extends Component {
           'marker-line-opacity: 1;' +
           'marker-placement: point;' +
           'marker-type: ellipse;' +
-          'marker-width: 10;' +
-          'marker-fill: #0d47a1;' +
+          'marker-width: 20;' +
+          'marker-fill: #7B00B4;' +
           'marker-allow-overlap: true;' +
         '}';
     }
@@ -128,7 +114,7 @@ export default class PoiBase extends Component {
 
   render()
   {
-    return null;
+    return (<InfoCard query={ this.query } />);
   }
 }
 

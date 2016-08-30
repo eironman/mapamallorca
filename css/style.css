@@ -2,6 +2,15 @@
   padding: 0;
   margin: 0;
 }
+body {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+p {
+  font-size: 14px;
+}
+h2 {
+  font-size: 17px;
+}
 html, body, #app, #mapBox, #map, .h100{
   height: 100%;
 }
@@ -18,17 +27,36 @@ html, body, #app, #mapBox, #map, .h100{
   position: fixed;
   top: 0;
   left: 0;
-  height: 50px;
   width: 100%;
+  font-size: 14px;
   z-index: 2;
   background-color: #1976d2;
 }
-
-/********** Materialize *********/
-input[type=range] {
-  border: none;
+#infoCard {
+  position: fixed;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  background-color:rgba(255,255,255,0.9);
 }
-
-input[type=range]+.thumb.active {
-  display: none;
+.infoCardContent {
+  padding: 20px 10px;
+  max-width: 560px;
+  max-height: 150px;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+.infoCardContent h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.toggleInfoCard {
+  position: absolute;
+  bottom: -21px;
+  right: 0;
+  background-color: #1e88e5;
+  padding: 3px 5px;
+  color: #FFF;
+  font-size: 13px;
+  cursor: pointer;
 }

@@ -26,8 +26,14 @@ export class MapController extends Component {
           lat={ PALMA_LAT }
           lng={ PALMA_LNG }
         />
-        <YearLayer />
-        <PoiLayer />
+        <YearLayer
+          mapInstance={ this.props.mapInstance }
+          yearSelected={ this.props.yearSelected }
+        />
+        <PoiLayer
+          mapInstance={ this.props.mapInstance }
+          poiSelected={ this.props.poiSelected }
+        />
       </div>
     );
   }
@@ -36,7 +42,9 @@ export class MapController extends Component {
 // Connect class to redux
 const mapStateToProps = (state) => {
   return {
-    mapInstance: state.mapReducer.mapInstance
+    mapInstance : state.mapReducer.mapInstance,
+    yearSelected: state.mapReducer.yearSelected,
+    poiSelected : state.mapReducer.poiSelected
   };
 };
 

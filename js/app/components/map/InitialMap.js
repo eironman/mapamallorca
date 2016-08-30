@@ -5,27 +5,19 @@ import React, { Component, PropTypes } from 'react';
 **/
 export default class InitialMap extends Component {
 
-  constructor() {
+  constructor()
+  {
     super();
     this.mapInstance = null;
   }
 
-  setCenter(lat, lng) {
+  setCenter(lat, lng)
+  {
     this.mapInstance.setCenter(new google.maps.LatLng(lat, lng));
   }
 
-  /* fitToBoundingBox(boundingBox) {
-    this.boundingBox = boundingBox;
-    this.mapInstance.fitBounds(
-      new google.maps.LatLngBounds(
-        new google.maps.LatLng(boundingBox.latitude_sw, boundingBox.longitude_sw),
-        new google.maps.LatLng(boundingBox.latitude_ne, boundingBox.longitude_ne)
-      )
-    );
-  } */
-
-  initMap() {
-
+  initMap()
+  {
     this.mapInstance = new L.Map('map', {
       zoomControl: false,
       center     : [this.props.lat, this.props.lng],
@@ -39,7 +31,8 @@ export default class InitialMap extends Component {
     return this.mapInstance;
   }
 
-  render() {
+  render()
+  {
     return null;
   }
 }
