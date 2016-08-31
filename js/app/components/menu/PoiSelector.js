@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { selectPoi } from '../../actions/mapActions';
+import { togglePoi } from '../../actions/mapActions';
 import { POIS } from '../../constants/constants';
 import { arrayContains } from '../../helpers/arrayHelper';
 
@@ -10,10 +10,12 @@ import { arrayContains } from '../../helpers/arrayHelper';
 class PoiSelectorOptions extends Component {
 
   handlePoiSelect(poi) {
-    this.props.dispatch(selectPoi(poi));
+    this.props.dispatch(togglePoi(poi));
   }
 
-  render() {
+  render()
+  {
+    const poiSelected = this.props.poiSelected;
     return (
       <li>
         <a href="javascript:void(0)">
@@ -22,6 +24,7 @@ class PoiSelectorOptions extends Component {
         <ul>
           <li>
             <a
+              className={ poiSelected === POIS.CITY_WALL ? 'active' : '' }
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }
             >
@@ -30,6 +33,7 @@ class PoiSelectorOptions extends Component {
           </li>
           <li>
             <a
+              className={ poiSelected === POIS.BULLFIGHT ? 'active' : '' }
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }
             >
@@ -38,6 +42,7 @@ class PoiSelectorOptions extends Component {
           </li>
           <li>
             <a
+              className={ poiSelected === POIS.BULLFIGHT_1865 ? 'active' : '' }
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
             >
@@ -46,6 +51,7 @@ class PoiSelectorOptions extends Component {
           </li>
           <li>
             <a
+              className={ poiSelected === POIS.TORRE_ES_FORTI ? 'active' : '' }
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.TORRE_ES_FORTI) }
             >
@@ -54,6 +60,7 @@ class PoiSelectorOptions extends Component {
           </li>
           <li>
             <a
+              className={ poiSelected === POIS.WATER_WINDMILLS ? 'active' : '' }
               href="javascript:void(0)"
               onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }
             >
@@ -66,4 +73,11 @@ class PoiSelectorOptions extends Component {
   }
 }
 
-export default connect()(PoiSelectorOptions);
+// Connect class to redux
+const mapStateToProps = (state) => {
+  return {
+    poiSelected: state.mapReducer.poiSelected
+  };
+};
+
+export default connect(mapStateToProps)(PoiSelectorOptions);

@@ -48,6 +48,8 @@
   .flexnav li ul li a {
     display: block;
     background: #1e88e5; }
+  .flexnav li ul li a.active {
+    background: #1e88e5 url('../img/tick.png') no-repeat 90% 50%; }
   .flexnav ul li ul li a {
     background: #bfbfbc; }
   .flexnav ul li ul li ul li a {

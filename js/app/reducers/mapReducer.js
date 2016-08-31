@@ -27,9 +27,13 @@ export function mapReducer(state = mapInitialState, action) {
         yearSelected: action.year
       });
 
-    case MAP_ACTIONS.SELECT_POI:
+    case MAP_ACTIONS.TOGGLE_POI:
+      let newPoi = action.poi;
+      if (state.poiSelected === newPoi) {
+        newPoi = null;
+      }
       return Object.assign({}, state, {
-        poiSelected: action.poi
+        poiSelected: newPoi
       });
 
     default:

@@ -11,7 +11,7 @@ export default class InfoCard extends Component {
     const cardContent = $(".infoCardContent");
     cardContent.toggle(500, () => {
       if ( cardContent.css('display') === 'none' ) {
-        $(".toggleInfoCard").html('mostrar');
+        $(".toggleInfoCard").html('info');
       } else {
         $(".toggleInfoCard").html('ocultar');
       }

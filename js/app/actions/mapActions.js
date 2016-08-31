@@ -22,9 +22,9 @@ export function selectYear(year) {
  * The user selects a poi
  * @param  {string} poi
  */
-export function selectPoi(poi) {
+export function togglePoi(poi) {
   return {
-    type: MAP_ACTIONS.SELECT_POI,
+    type: MAP_ACTIONS.TOGGLE_POI,
     poi
   };
 }
