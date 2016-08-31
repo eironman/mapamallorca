@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import PoiBase from './PoiBase';
+import PoiCartodbBase from './PoiCartodbBase';
 import { CARTODB_SHAPE_TABLE } from '../../../constants/constants';
 
 /**
 * Displays in the map the bullfight arena
 **/
-export default class Bullfight1865 extends PoiBase {
+export default class Bullfight1865 extends PoiCartodbBase {
 
 }
 

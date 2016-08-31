@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import PoiBase from './PoiBase';
+import PoiCartodbBase from './PoiCartodbBase';
 import { CARTODB_SHAPE_TABLE } from '../../../constants/constants';
 
 /**
 * Displays in the map the city wall
 **/
-export default class CityWall extends PoiBase {
+export default class CityWall extends PoiCartodbBase {
 
 }
 

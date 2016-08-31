@@ -4,7 +4,7 @@ import CityWall from '../components/map/pois/CityWall';
 import Bullfight from '../components/map/pois/Bullfight';
 import Bullfight1865 from '../components/map/pois/Bullfight1865';
 import TorreForti from '../components/map/pois/TorreForti';
-import Windmill from '../components/map/pois/Windmill';
+import WaterWindmill from '../components/map/pois/WaterWindmill';
 
 export default class PoiFactory {
 
@@ -32,9 +32,9 @@ export default class PoiFactory {
       poi = (<TorreForti mapInstance={ mapInstance }/>);
     }
 
-    // Windmill
-    if (poiId === POIS.WINDMILLS) {
-      poi = (<Windmill mapInstance={ mapInstance }/>);
+    // Water Windmill
+    if (poiId === POIS.WATER_WINDMILLS) {
+      poi = (<WaterWindmill mapInstance={ mapInstance }/>);
     }
     
     return poi;

@@ -55,7 +55,7 @@ class PoiSelectorOptions extends Component {
           <li>
             <a
               href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.WINDMILLS) }
+              onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }
             >
               Molinos de agua
             </a>

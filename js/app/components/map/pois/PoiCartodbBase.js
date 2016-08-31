@@ -11,7 +11,7 @@ import {
 * Base class for shapes
 * Displays a shape in the map
 **/
-export default class PoiBase extends Component {
+export default class PoiCartodbBase extends Component {
 
   constructor(props)
   {
@@ -114,11 +114,11 @@ export default class PoiBase extends Component {
 
   render()
   {
-    return (<InfoCard ref={ 'infoCard' } query={ this.query } />);
+    return (<InfoCard ref={ 'infoCard' } />);
   }
 }
 
-PoiBase.propTypes = {
+PoiCartodbBase.propTypes = {
   poiId       : PropTypes.number,
   mapInstance : PropTypes.object,
   cartodbTable: PropTypes.string
