@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { togglePoi } from '../../actions/mapActions';
 import { POIS } from '../../constants/constants';
-import { arrayContains } from '../../helpers/arrayHelper';
+import TallestBuildings from './TallestBuildings';
 
 /**
 * Options for selector of points of interest
@@ -22,6 +22,12 @@ class PoiSelectorOptions extends Component {
           Puntos de Interés
         </a>
         <ul>
+          <li>
+            <a href="javascript:void(0)">
+              Edificios más altos
+            </a>
+            <TallestBuildings poiSelected={ poiSelected }/>
+          </li> 
           <li>
             <a
               className={ poiSelected === POIS.CITY_WALL ? 'active' : '' }
@@ -47,15 +53,6 @@ class PoiSelectorOptions extends Component {
               onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
             >
               Plaza de toros (1865)
-            </a>
-          </li>
-          <li>
-            <a
-              className={ poiSelected === POIS.TORRE_ES_FORTI ? 'active' : '' }
-              href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.TORRE_ES_FORTI) }
-            >
-              Edificio más alto
             </a>
           </li>
           <li>

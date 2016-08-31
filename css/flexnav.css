@@ -51,9 +51,11 @@
   .flexnav li ul li a.active {
     background: #1e88e5 url('../img/tick.png') no-repeat 90% 50%; }
   .flexnav ul li ul li a {
-    background: #bfbfbc; }
+    background: #2196f3; }
+  .flexnav ul li ul li a.active {
+    background: #2196f3 url('../img/tick.png') no-repeat 90% 50%; }
   .flexnav ul li ul li ul li a {
-    background: #cbcbc9; }
+    background: #2196f3; }
   .flexnav .touch-button {
     position: absolute;
     z-index: 999;
