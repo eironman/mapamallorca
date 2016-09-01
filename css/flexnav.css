@@ -50,10 +50,14 @@
     background: #1e88e5; }
   .flexnav li ul li a.active {
     background: #1e88e5 url('../img/tick.png') no-repeat 90% 50%; }
+  .flexnav li ul li a:hover, .flexnav li ul li a.active:hover {
+    background-color: rgba(22, 98, 164, 0.94); }
   .flexnav ul li ul li a {
     background: #2196f3; }
   .flexnav ul li ul li a.active {
     background: #2196f3 url('../img/tick.png') no-repeat 90% 50%; }
+  .flexnav ul li ul li a:hover, .flexnav ul li ul li a.active:hover {
+    background-color: rgba(30, 136, 229, 0.94); }
   .flexnav ul li ul li ul li a {
     background: #2196f3; }
   .flexnav .touch-button {
