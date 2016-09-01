@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import PoiCartodbBase from './PoiCartodbBase';
-import { CARTODB_SPOT_TABLE } from '../../../constants/constants';
+import React, { Component } from 'react';
+import PoiCartodbBase from '../PoiCartodbBase';
+import { CARTODB_SPOT_TABLE } from '../../../../constants/constants';
 
 /**
 * Points in the map the tallest building

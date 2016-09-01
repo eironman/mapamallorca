@@ -22,11 +22,22 @@ export const INFOWINDOW_TEMPLATE =
 
 // Points of interest
 export const POIS = {
-  CITY_WALL      : 0,
-  BULLFIGHT      : 1,
-  BULLFIGHT_1865 : 2,
-  WATER_WINDMILLS: 3,
-  TORRE_ES_FORTI : 4
+  CITY_WALL         : 0,
+  BULLFIGHT         : 1,
+  BULLFIGHT_1865    : 2,
+  WATER_WINDMILLS   : 3,
+  TORRE_ES_FORTI    : 4,
+  AIRPORT_SANT_JOAN : 5,
+  CATHEDRAL         : 6,
+  TORRE_ASIMA       : 7,
+  TORRE_HORNABEQUE  : 8,
+  SANTANDER_BUILDING: 9,
+  COMPLEJO_PILLARI  : 10,
+  TORRES_PORTIXOL   : 11,
+  PUIG_ALARO        : 12,
+  GABRIEL_ROCA      : 13,
+  CREDITO_BALEAR    : 14,
+  TORRE_MALLORCA    : 15
 };
 
 // Bounding box of the map correspondig to the year selected

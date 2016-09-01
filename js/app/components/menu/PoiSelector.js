@@ -13,6 +13,21 @@ class PoiSelectorOptions extends Component {
     this.props.dispatch(togglePoi(poi));
   }
 
+  createItem(poiId, text)
+  {
+    return (
+      <li>
+        <a
+          className={ this.props.poiSelected === poiId ? 'active' : '' }
+          href="javascript:void(0)"
+          onClick={ () => this.handlePoiSelect(poiId) }
+        >
+          { text }
+        </a>
+      </li>
+    );
+  }
+
   render()
   {
     const poiSelected = this.props.poiSelected;
@@ -27,43 +42,11 @@ class PoiSelectorOptions extends Component {
               Edificios más altos
             </a>
             <TallestBuildings poiSelected={ poiSelected }/>
-          </li> 
-          <li>
-            <a
-              className={ poiSelected === POIS.CITY_WALL ? 'active' : '' }
-              href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }
-            >
-              Muralla Renacentista
-            </a>
           </li>
-          <li>
-            <a
-              className={ poiSelected === POIS.BULLFIGHT ? 'active' : '' }
-              href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }
-            >
-              Coliseo Balear
-            </a>
-          </li>
-          <li>
-            <a
-              className={ poiSelected === POIS.BULLFIGHT_1865 ? 'active' : '' }
-              href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
-            >
-              Plaza de toros (1865)
-            </a>
-          </li>
-          <li>
-            <a
-              className={ poiSelected === POIS.WATER_WINDMILLS ? 'active' : '' }
-              href="javascript:void(0)"
-              onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }
-            >
-              Molinos de agua
-            </a>
-          </li>
+          { this.createItem(POIS.CITY_WALL, 'Muralla Renacentista') }
+          { this.createItem(POIS.BULLFIGHT, 'Coliseo Balear') }
+          { this.createItem(POIS.BULLFIGHT_1865, 'Plaza de Toros (1865)') }
+          { this.createItem(POIS.WATER_WINDMILLS, 'Molinos de Agua') }
         </ul>
       </li>
     );
