@@ -48,6 +48,9 @@ export default class YearLayer extends Component {
         }
       ).addTo(this.props.mapInstance);
       
+      // Move layer under possible POIs displayed
+      this.yearLayer.bringToBack();
+
       // TODO: Not sure if moving the map is a good idea, try usability first
       // this.repositionMap();      
 
