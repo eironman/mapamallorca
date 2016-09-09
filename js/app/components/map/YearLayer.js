@@ -38,8 +38,9 @@ export default class YearLayer extends Component {
       const bounds = L.latLngBounds(southWest, northEast);
       
       // Actual layer
+      // TILES_SERVER is injected by webpack
       this.yearLayer = L.tileLayer(
-        'http://www.in.mapamallorca.com/tiles/' + this.props.yearSelected + '/{z}/{x}/{y}.png',
+        TILES_SERVER + this.props.yearSelected + '/{z}/{x}/{y}.png',
         {
           minZoom: 14,
           maxZoom: 18,

@@ -35,6 +35,7 @@ class YearSelector extends Component {
           { this.createItem(null, 'Año Actual') }
           { this.createItem(1644, '1644') }
           { this.createItem(1869, '1869') }
+          { this.createItem(1860, '1860 (Defensa)') }
         </ul>
       </li>
     );

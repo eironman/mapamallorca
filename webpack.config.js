@@ -52,7 +52,11 @@ const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify(environment)
-    }
+    },
+    'TILES_SERVER':
+      environment === 'local' ?
+        JSON.stringify('http://www.in.mapamallorca.com/tiles/') :
+        JSON.stringify('http://mallorcaparquet.com/mapamallorca/tiles/')
   })
 ];
 if (environment === 'local') {

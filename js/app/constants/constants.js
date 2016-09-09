@@ -53,5 +53,11 @@ export const YEAR_BB_COORDS = {
     lng_ne: 2.657200098,
     lat_sw: 39.5639486812,
     lng_sw: 2.6370191574
+  },
+  1860: {
+    lat_ne: 39.589223,
+    lng_ne: 2.564834,
+    lat_sw: 39.517762,
+    lng_sw: 2.686047
   }
 };
