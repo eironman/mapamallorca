@@ -5,16 +5,25 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 // import HomePage from './components/HomePage'
 import MapController from './components/map/MapController';
-import MenuController from './components/menu/MenuController';
+import MapsMenuController from './components/menu/MapsMenuController';
+import PoiMenuController from './components/menu/PoiMenuController';
 
 let store = createStore(reducer);
 
-// Top menu
+// Maps menu
 ReactDOM.render(
   <Provider store={store}>
-    <MenuController />
+    <MapsMenuController />
   </Provider>,
-  document.getElementById('menu')
+  document.getElementById('mapsMenu')
+);
+
+// Poi menu
+ReactDOM.render(
+  <Provider store={store}>
+    <PoiMenuController />
+  </Provider>,
+  document.getElementById('poiMenu')
 );
 
 // Map

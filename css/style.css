@@ -22,15 +22,6 @@ html, body, #app, #mapBox, #map, .h100{
   width: 200px;
   margin-left: -100px;
 }
-#menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 14px;
-  z-index: 2;
-  background-color: #1976d2;
-}
 #infoCard {
   position: fixed;
   top: 43px;
@@ -72,6 +63,26 @@ html, body, #app, #mapBox, #map, .h100{
     height: 93%;
   }
 }
+
+/******** menu ********/
+#mapsMenu, #poiMenu {
+  height: 154px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  z-index: 10001;
+  background-color: #0C3763;
+}
+.menuTag {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  background-color: #1976d2;
+}
+
+
 
 /******** range styling ********/
 input[type=range] {
@@ -161,4 +172,9 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
+}
+
+/******** shortener ********/
+.relative {
+  position: relative;
 }
