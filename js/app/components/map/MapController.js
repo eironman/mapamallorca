@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import YearLayer from './YearLayer';
+import HistoryMapLayer from './HistoryMapLayer';
 import PoiLayer from './PoiLayer';
 import InitialMap from './InitialMap';
 import { connect } from 'react-redux';
@@ -26,9 +26,9 @@ export class MapController extends Component {
           lat={ PALMA_LAT }
           lng={ PALMA_LNG }
         />
-        <YearLayer
+        <HistoryMapLayer
           mapInstance={ this.props.mapInstance }
-          yearSelected={ this.props.yearSelected }
+          mapSelected={ this.props.mapSelected }
         />
         <PoiLayer
           mapInstance={ this.props.mapInstance }
@@ -42,9 +42,9 @@ export class MapController extends Component {
 // Connect class to redux
 const mapStateToProps = (state) => {
   return {
-    mapInstance : state.mapReducer.mapInstance,
-    yearSelected: state.mapReducer.yearSelected,
-    poiSelected : state.mapReducer.poiSelected
+    mapInstance: state.mapReducer.mapInstance,
+    mapSelected: state.menuReducer.mapSelected,
+    poiSelected: state.menuReducer.poiSelected
   };
 };
 

@@ -40,8 +40,8 @@ export const POIS = {
   TORRE_MALLORCA    : 15
 };
 
-// Bounding box of the map correspondig to the year selected
-export const YEAR_BB_COORDS = {
+// Bounding box of the map selected
+export const MAP_BB_COORDS = {
   1644: {
     lat_ne: 39.5773216175,
     lng_ne: 2.657200098,
@@ -60,4 +60,31 @@ export const YEAR_BB_COORDS = {
     lat_sw: 39.517762,
     lng_sw: 2.686047
   }
+};
+
+export const SLIDER_CONFIG = {
+  infinite      : true,
+  speed         : 500,
+  slidesToShow  : 4,
+  slidesToScroll: 1,
+  adaptiveHeight: false,
+  variableWidth : true,
+  responsive    : [
+    {
+      breakpoint: 600,
+      settings  : {
+        infinite      : false,
+        slidesToShow  : 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings  : {
+        infinite      : false,
+        slidesToShow  : 4,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };

@@ -3,7 +3,10 @@
   margin: 0;
 }
 body {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+ul {
+  list-style: none;
 }
 p {
   font-size: 14px;
@@ -65,8 +68,12 @@ html, body, #app, #mapBox, #map, .h100{
 }
 
 /******** menu ********/
+.dummyImg {
+  width: 150px;
+  height: 150px;
+  background-color: #FFF;
+}
 #mapsMenu, #poiMenu {
-  height: 154px;
   position: fixed;
   top: 0;
   left: 0;
@@ -76,13 +83,80 @@ html, body, #app, #mapBox, #map, .h100{
   background-color: #0C3763;
 }
 .menuTag {
-  position: absolute;
-  bottom: -15px;
-  left: 0;
+  height: 4px;
   background-color: #1976d2;
+}
+.menuTag .menuTrigger{
+  position: absolute;
+  left: 50%;
+  color: #FFF;
+  cursor: pointer;
+  background-color: #1976d2;
+}
+#mapsMenu .menuTrigger {
+  bottom: -20px;
+  margin-left: -40px;
+  border-radius: 0px 0px 5px 5px;
+  padding: 0px 16px 4px;
+}
+#poiMenu .menuTrigger {
+  top: -20px;
+  margin-left: -89px;
+  border-radius: 5px 5px 0px 0px;
+  padding: 4px 16px 0px;
 }
 
 
+/******** carousel ********/
+.carousel ul {
+  text-align: center;
+  font-size: 0; /* fix inline-block whitespace */
+}
+.carousel ul li {
+  display: inline-block;
+  margin-right: 1px;
+}
+.carousel ul li:last-child {
+  margin-right: 0px;
+}
+
+.slick-slider {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+.slick-list {
+  overflow: hidden;
+}
+.slick-slide {
+  float: left;
+  height: 150px;
+  cursor: pointer;
+}
+.slick-slide:hover {
+  opacity: .9;
+}
+.slick-arrow {
+  position: absolute;
+  top: 0;
+  height: 150px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 0;
+  outline: none;
+}
+.slick-arrow:hover {
+  opacity: .7;
+}
+.slick-prev {
+  left: -50px;
+  background: #0D47A1 url('/img/left_arrow.png') no-repeat 6px 8px;
+}
+.slick-next {
+  right: -50px;
+  background: #0D47A1 url('/img/right_arrow.png') no-repeat 10px 8px;
+}
 
 /******** range styling ********/
 input[type=range] {

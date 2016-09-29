@@ -5,9 +5,7 @@ import { arrayContains, removeFromArray } from '../helpers/arrayHelper';
 * Initial state of the map menu
 **/
 const mapInitialState = {
-  mapInstance : null,
-  yearSelected: null,
-  poiSelected : null
+  mapInstance: null
 };
 
 /**
@@ -20,20 +18,6 @@ export function mapReducer(state = mapInitialState, action) {
     case MAP_ACTIONS.INIT_MAP:
       return Object.assign({}, state, {
         mapInstance: action.map
-      });
-
-    case MAP_ACTIONS.SELECT_YEAR:
-      return Object.assign({}, state, {
-        yearSelected: action.year
-      });
-
-    case MAP_ACTIONS.TOGGLE_POI:
-      let newPoi = action.poi;
-      if (state.poiSelected === newPoi) {
-        newPoi = null;
-      }
-      return Object.assign({}, state, {
-        poiSelected: newPoi
       });
 
     default:
