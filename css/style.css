@@ -75,12 +75,17 @@ html, body, #app, #mapBox, #map, .h100{
 }
 #mapsMenu, #poiMenu {
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
   font-size: 14px;
   z-index: 10001;
   background-color: #0C3763;
+}
+#mapsMenu {
+  top: 0;
+}
+#poiMenu {
+  bottom: 0;
 }
 .menuTag {
   height: 4px;

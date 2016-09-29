@@ -9,26 +9,14 @@ import { SLIDER_CONFIG, POIS } from '../../constants/constants';
 **/
 class PoiMenuController extends Component {
 
+  // Select a poi
   handlePoiSelect(poi) {
     this.props.dispatch(togglePoi(poi));
   }
 
+  // Show/hide menu
   onTriggerClick() {
     this.props.dispatch(togglePoiMenu());
-  }
-
-  // Calculate position based on window height
-  repositionMenu() {
-    const position = $(window).height() - $("#poiMenu").height();
-    $("#poiMenu").css({ 'top': position });
-  }
-
-  componentDidUpdate() {
-    this.repositionMenu();
-  }
-
-  componentDidMount() {
-    this.repositionMenu();
   }
 
   render() {
