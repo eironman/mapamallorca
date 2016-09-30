@@ -141,6 +141,9 @@ html, body, #app, #mapBox, #map, .h100{
 .slick-slide:hover {
   opacity: .9;
 }
+.slick-slide.selected {
+  background: url('/img/1644.jpg') no-repeat left top;
+}
 .slick-arrow {
   position: absolute;
   top: 0;

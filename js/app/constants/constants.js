@@ -40,29 +40,40 @@ export const POIS = {
   TORRE_MALLORCA    : 15
 };
 
+// Maps
+export const MAPS = {
+  CIVITAS       : 0,
+  DEFENSA_BAHIA : 1,
+  ALCANTARA_PENA: 2,
+  SAN_CARLOS    : 3
+};
+
 // Bounding box of the map selected
 export const MAP_BB_COORDS = {
-  1644: {
+  // MAPS.CIVITAS
+  0: {
     lat_ne: 39.5773216175,
     lng_ne: 2.657200098,
     lat_sw: 39.5639486812,
     lng_sw: 2.6370191574
   },
-  1869: {
-    lat_ne: 39.5773216175,
-    lng_ne: 2.657200098,
-    lat_sw: 39.5639486812,
-    lng_sw: 2.6370191574
-  },
-  1860: {
+  // DEFENSA_BAHIA
+  1: {
     lat_ne: 39.589223,
     lng_ne: 2.564834,
     lat_sw: 39.517762,
     lng_sw: 2.686047
+  },
+  // ALCANTARA_PENA
+  2: {
+    lat_ne: 39.5773216175,
+    lng_ne: 2.657200098,
+    lat_sw: 39.5639486812,
+    lng_sw: 2.6370191574
   }
 };
 
-export const SLIDER_CONFIG = {
+export const CAROUSEL_CONFIG = {
   infinite      : true,
   speed         : 500,
   slidesToShow  : 4,

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { togglePoi, togglePoiMenu } from '../../actions/menuActions';
 import Carousel from 'react-slick';
-import { SLIDER_CONFIG, POIS } from '../../constants/constants';
+import CarouselSlide from './CarouselSlide';
+import { CAROUSEL_CONFIG, POIS } from '../../constants/constants';
 
 /**
 * Menu to select a poi
@@ -21,19 +22,31 @@ class PoiMenuController extends Component {
 
   render() {
     const carousel = (
-      <Carousel {...SLIDER_CONFIG}>
-        <div onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }>
-          <img src="/img/muralla.jpg" />
-        </div>
-        <div onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }>
-          <img src="/img/plazatoros.jpg" />
-        </div>
-        <div onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }>
-          <img src="/img/coliseo.jpg" />
-        </div>
-        <div onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }>
-          <img src="/img/molinos.jpg" />
-        </div>
+      <Carousel {...CAROUSEL_CONFIG}>
+        <CarouselSlide
+          onClick={ () => this.handleMapSelect(POIS.CITY_WALL) }
+          slideId={ POIS.CITY_WALL }
+          selectedId={ this.props.poiSelected }
+          src={'/img/muralla.jpg'}
+        />
+        <CarouselSlide
+          onClick={ () => this.handleMapSelect(POIS.BULLFIGHT_1865) }
+          slideId={ POIS.BULLFIGHT_1865 }
+          selectedId={ this.props.poiSelected }
+          src={'/img/plazatoros.jpg'}
+        />
+        <CarouselSlide
+          onClick={ () => this.handleMapSelect(POIS.BULLFIGHT) }
+          slideId={ POIS.BULLFIGHT }
+          selectedId={ this.props.poiSelected }
+          src={'/img/coliseo.jpg'}
+        />
+        <CarouselSlide
+          onClick={ () => this.handleMapSelect(POIS.WATER_WINDMILLS) }
+          slideId={ POIS.WATER_WINDMILLS }
+          selectedId={ this.props.poiSelected }
+          src={'/img/molinos.jpg'}
+        />
       </Carousel>
     );
 
