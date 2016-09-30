@@ -16,6 +16,9 @@ const mapInitialState = {
 **/
 export function menuReducer(state = mapInitialState, action) {
 
+  let showMapsMenu;
+  let showPoiMenu;
+
   switch (action.type) {
 
     case MENU_ACTIONS.TOGGLE_MAPS_MENU:
@@ -28,17 +31,25 @@ export function menuReducer(state = mapInitialState, action) {
         showPoiMenu: !state.showPoiMenu
       });
 
-    case MENU_ACTIONS.SELECT_MAP:
+    case MENU_ACTIONS.TOGGLE_MAP:
+      let newMap = action.map;
+      showMapsMenu = false;
+      showPoiMenu = false;
+      if (state.mapSelected === newMap) {
+        newMap = null;
+        showPoiMenu = state.showPoiMenu;
+        showMapsMenu = true;
+      }
       return Object.assign({}, state, {
-        mapSelected : action.map,
-        showMapsMenu: false,
-        showPoiMenu : false
+        mapSelected: newMap,
+        showMapsMenu,
+        showPoiMenu
       });
 
     case MENU_ACTIONS.TOGGLE_POI:
       let newPoi = action.poi;
-      let showMapsMenu = false;
-      let showPoiMenu = false;
+      showMapsMenu = false;
+      showPoiMenu = false;
       if (state.poiSelected === newPoi) {
         newPoi = null;
         showMapsMenu = state.showMapsMenu;

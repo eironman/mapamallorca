@@ -4,9 +4,9 @@ import { MENU_ACTIONS } from '../constants/actions';
  * The user selects a map
  * @param  {int} map
  */
-export function selectMap(map) {
+export function toggleMap(map) {
   return {
-    type: MENU_ACTIONS.SELECT_MAP,
+    type: MENU_ACTIONS.TOGGLE_MAP,
     map
   };
 }

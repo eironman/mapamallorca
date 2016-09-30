@@ -136,13 +136,17 @@ html, body, #app, #mapBox, #map, .h100{
 .slick-slide {
   float: left;
   height: 150px;
+  width: 150px;
   cursor: pointer;
+  position: relative;
 }
 .slick-slide:hover {
   opacity: .9;
 }
-.slick-slide.selected {
-  background: url('/img/1644.jpg') no-repeat left top;
+.slick-slide .deactivate {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .slick-arrow {
   position: absolute;

@@ -24,27 +24,23 @@ class PoiMenuController extends Component {
     const carousel = (
       <Carousel {...CAROUSEL_CONFIG}>
         <CarouselSlide
-          onClick={ () => this.handleMapSelect(POIS.CITY_WALL) }
-          slideId={ POIS.CITY_WALL }
-          selectedId={ this.props.poiSelected }
+          onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }
+          selected={ POIS.CITY_WALL === this.props.poiSelected }
           src={'/img/muralla.jpg'}
         />
         <CarouselSlide
-          onClick={ () => this.handleMapSelect(POIS.BULLFIGHT_1865) }
-          slideId={ POIS.BULLFIGHT_1865 }
-          selectedId={ this.props.poiSelected }
+          onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
+          selected={ POIS.BULLFIGHT_1865 === this.props.poiSelected }
           src={'/img/plazatoros.jpg'}
         />
         <CarouselSlide
-          onClick={ () => this.handleMapSelect(POIS.BULLFIGHT) }
-          slideId={ POIS.BULLFIGHT }
-          selectedId={ this.props.poiSelected }
+          onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }
+          selected={ POIS.BULLFIGHT === this.props.poiSelected }
           src={'/img/coliseo.jpg'}
         />
         <CarouselSlide
-          onClick={ () => this.handleMapSelect(POIS.WATER_WINDMILLS) }
-          slideId={ POIS.WATER_WINDMILLS }
-          selectedId={ this.props.poiSelected }
+          onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }
+          selected={ POIS.WATER_WINDMILLS === this.props.poiSelected }
           src={'/img/molinos.jpg'}
         />
       </Carousel>

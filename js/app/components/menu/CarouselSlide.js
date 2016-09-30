@@ -6,6 +6,7 @@ import React, { Component, PropTypes } from 'react';
 export default class CarouselSlide extends Component {
 
   render() {
+    const deactivate = (<img src="/img/deactivate.png" className="deactivate" />);
     return (
       <div
         onClick={ this.props.onClick }
@@ -14,6 +15,7 @@ export default class CarouselSlide extends Component {
         style={this.props.style}
       >
         <img src={ this.props.src } />
+        { this.props.selected ? deactivate : null }
       </div>
     );
   }
@@ -21,8 +23,7 @@ export default class CarouselSlide extends Component {
 
 // Class properties
 CarouselSlide.propTypes = {
-  slideId     : PropTypes.number,
-  selectedId  : PropTypes.number,
+  selected    : PropTypes.bool,
   onClick     : PropTypes.func,
   src         : PropTypes.string,
   className   : PropTypes.string, // Prop value comes from react-slick

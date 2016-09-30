@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectMap, toggleMapsMenu } from '../../actions/menuActions';
+import { toggleMap, toggleMapsMenu } from '../../actions/menuActions';
 import Carousel from 'react-slick';
 import CarouselSlide from './CarouselSlide';
 import { MAPS, CAROUSEL_CONFIG } from '../../constants/constants';
@@ -12,7 +12,7 @@ class MapsMenuController extends Component {
 
   // Select a map
   handleMapSelect(map) {
-    this.props.dispatch(selectMap(map));
+    this.props.dispatch(toggleMap(map));
   }
 
   // Show/hide menu
@@ -25,20 +25,17 @@ class MapsMenuController extends Component {
       <Carousel {...CAROUSEL_CONFIG}>
         <CarouselSlide
           onClick={ () => this.handleMapSelect(MAPS.CIVITAS) }
-          slideId={ MAPS.CIVITAS }
-          selectedId={ this.props.mapSelected }
+          selected={ MAPS.CIVITAS === this.props.mapSelected }
           src={'/img/1644.jpg'}
         />
         <CarouselSlide
           onClick={ () => this.handleMapSelect(MAPS.DEFENSA_BAHIA) }
-          slideId={ MAPS.DEFENSA_BAHIA }
-          selectedId={ this.props.mapSelected }
+          selected={ MAPS.DEFENSA_BAHIA === this.props.mapSelected }
           src={'/img/1860.jpg'}
         />
         <CarouselSlide
           onClick={ () => this.handleMapSelect(MAPS.ALCANTARA_PENA) }
-          slideId={ MAPS.ALCANTARA_PENA }
-          selectedId={ this.props.mapSelected }
+          selected={ MAPS.ALCANTARA_PENA === this.props.mapSelected }
           src={'/img/1869.jpg'}
         />
       </Carousel>
