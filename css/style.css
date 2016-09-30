@@ -9,7 +9,7 @@ ul {
   list-style: none;
 }
 p {
-  font-size: 14px;
+  font-size: 15px;
 }
 h2 {
   font-size: 17px;
@@ -27,7 +27,7 @@ html, body, #app, #mapBox, #map, .h100{
 }
 #infoCard {
   position: fixed;
-  top: 43px;
+  top: 4px;
   left: 0;
   width: 100%;
   background-color:rgba(255,255,255,0.9);
@@ -47,32 +47,17 @@ html, body, #app, #mapBox, #map, .h100{
 }
 .toggleInfoCard {
   position: absolute;
-  bottom: -21px;
+  bottom: -22px;
   right: 0;
-  background-color: #1e88e5;
+  background-color: #1976d2;
   padding: 3px 5px;
   color: #FFF;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
-}
-
-@media all and (max-width: 800px) {
-  #menu {
-    position: relative;
-    top: initial;
-    left: initial;
-  }
-  #mapBox {
-    height: 93%;
-  }
+  border-bottom-left-radius: 5px;
 }
 
 /******** menu ********/
-.dummyImg {
-  width: 150px;
-  height: 150px;
-  background-color: #FFF;
-}
 #mapsMenu, #poiMenu {
   position: fixed;
   left: 0;
@@ -111,7 +96,6 @@ html, body, #app, #mapBox, #map, .h100{
   padding: 4px 16px 0px;
 }
 
-
 /******** carousel ********/
 .carousel ul {
   text-align: center;
@@ -148,6 +132,10 @@ html, body, #app, #mapBox, #map, .h100{
   top: 0;
   left: 0;
 }
+.slick-slide img{
+  width: 100%;
+  height: 100%;
+}
 .slick-arrow {
   position: absolute;
   top: 0;
@@ -168,6 +156,42 @@ html, body, #app, #mapBox, #map, .h100{
 .slick-next {
   right: -50px;
   background: #0D47A1 url('/img/right_arrow.png') no-repeat 10px 8px;
+}
+@media (max-width: 800px) {
+  .slick-slider {
+    width: 450px;
+  }
+}
+@media (max-width: 600px), (max-height: 450px) {
+  .slick-slider {
+    width: 300px;
+  }
+  .slick-slide {
+    width: 100px;
+    height: 100px;
+  }
+  .slick-arrow {
+    height: 100px;
+    width: 40px;
+  }
+  .slick-prev {
+    left: -40px;
+    background-size: 60% 85%;
+  }
+  .slick-next {
+    right: -40px;
+    background-size: 60% 85%;
+  }
+}
+@media (max-width: 400px) {
+  .slick-slider {
+    width: 200px;
+  }
+}
+@media (max-width: 300px) {
+  .slick-slider {
+    width: 100px;
+  }
 }
 
 /******** range styling ********/

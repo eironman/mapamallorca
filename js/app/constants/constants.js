@@ -82,7 +82,15 @@ export const CAROUSEL_CONFIG = {
   variableWidth : true,
   responsive    : [
     {
-      breakpoint: 600,
+      breakpoint: 300,
+      settings  : {
+        infinite      : false,
+        slidesToShow  : 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 400,
       settings  : {
         infinite      : false,
         slidesToShow  : 2,
@@ -90,10 +98,18 @@ export const CAROUSEL_CONFIG = {
       }
     },
     {
-      breakpoint: 1024,
+      breakpoint: 600,
       settings  : {
         infinite      : false,
-        slidesToShow  : 4,
+        slidesToShow  : 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 800,
+      settings  : {
+        infinite      : false,
+        slidesToShow  : 3,
         slidesToScroll: 1
       }
     }
