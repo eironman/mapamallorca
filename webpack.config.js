@@ -56,7 +56,7 @@ const plugins = [
     'TILES_SERVER':
       environment === 'local' ?
         JSON.stringify('http://www.in.mapamallorca.com/tiles/') :
-        JSON.stringify('http://mallorcaparquet.com/mapamallorca/tiles/')
+        JSON.stringify('http://www.mapamallorca.com/tiles/')
   })
 ];
 if (environment === 'local') {
