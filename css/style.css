@@ -151,11 +151,11 @@ html, body, #app, #mapBox, #map, .h100{
 }
 .slick-prev {
   left: -50px;
-  background: #0D47A1 url('/img/left_arrow.png') no-repeat 6px 8px;
+  background: url('/img/left_arrow.png') no-repeat 6px 8px;
 }
 .slick-next {
   right: -50px;
-  background: #0D47A1 url('/img/right_arrow.png') no-repeat 10px 8px;
+  background: url('/img/right_arrow.png') no-repeat 10px 8px;
 }
 @media (max-width: 800px) {
   .slick-slider {
