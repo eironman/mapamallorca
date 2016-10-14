@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { togglePoi, togglePoiMenu } from '../../actions/menuActions';
+import { hideFullScreenMessage } from '../../actions/appActions';
 import Carousel from 'react-slick';
 import CarouselSlide from './CarouselSlide';
 import { CAROUSEL_CONFIG, POIS } from '../../constants/constants';
@@ -13,6 +14,7 @@ class PoiMenuController extends Component {
   // Select a poi
   handlePoiSelect(poi) {
     this.props.dispatch(togglePoi(poi));
+    this.props.dispatch(hideFullScreenMessage());
   }
 
   // Show/hide menu

@@ -25,6 +25,16 @@ html, body, #app, #mapBox, #map, .h100{
   width: 200px;
   margin-left: -100px;
 }
+#fullScreenMessage {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  background-color:rgba(255,255,255,0.9);
+  width: 100%;
+  text-align: justify;
+  visibility: hidden;
+}
 #infoCard {
   position: fixed;
   top: 4px;
@@ -33,12 +43,34 @@ html, body, #app, #mapBox, #map, .h100{
   background-color:rgba(255,255,255,0.9);
   display: none;
 }
+#fullScreenMessage p, 
 .infoCardContent {
   padding: 20px 10px;
   max-width: 560px;
   max-height: 150px;
   margin: 0 auto;
   overflow-y: scroll;
+}
+@media (max-height: 600px) {
+  #fullScreenMessage {
+    top: 60%;
+  }
+}
+@media (max-height: 450px) {
+  #fullScreenMessage {
+    top: 60%;
+  }
+  #fullScreenMessage p {
+    max-height: 60px;
+  } 
+}
+@media (max-height: 320px) {
+  #fullScreenMessage {
+    top: 50%;
+  }
+  #fullScreenMessage p {
+    max-height: 50px;
+  } 
 }
 .infoCardContent h2 {
   margin-bottom: 10px;

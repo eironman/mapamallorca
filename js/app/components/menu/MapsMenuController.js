@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleMap, toggleMapsMenu } from '../../actions/menuActions';
+import { hideFullScreenMessage } from '../../actions/appActions';
 import Carousel from 'react-slick';
 import CarouselSlide from './CarouselSlide';
 import { MAPS, CAROUSEL_CONFIG } from '../../constants/constants';
@@ -13,6 +14,7 @@ class MapsMenuController extends Component {
   // Select a map
   handleMapSelect(map) {
     this.props.dispatch(toggleMap(map));
+    this.props.dispatch(hideFullScreenMessage());
   }
 
   // Show/hide menu

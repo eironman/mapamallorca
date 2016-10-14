@@ -7,10 +7,10 @@ import ReactDOM from 'react-dom';
 import reducer from './reducers/main';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-// import HomePage from './components/HomePage'
 import MapController from './components/map/MapController';
 import MapsMenuController from './components/menu/MapsMenuController';
 import PoiMenuController from './components/menu/PoiMenuController';
+import FullScreenMessage from './components/FullScreenMessage';
 
 let store = createStore(reducer);
 
@@ -28,6 +28,14 @@ ReactDOM.render(
     <PoiMenuController />
   </Provider>,
   document.getElementById('poiMenu')
+);
+
+// Full screen message
+ReactDOM.render(
+  <Provider store={store}>
+    <FullScreenMessage />
+  </Provider>,
+  document.getElementById('fullScreenMessage')
 );
 
 // Map
