@@ -19,7 +19,7 @@ export default class InitialMap extends Component {
   initMap()
   {
     this.mapInstance = new L.Map('map', {
-      zoomControl: false,
+      zoomControl: true,
       center     : [this.props.lat, this.props.lng],
       zoom       : 16
     });

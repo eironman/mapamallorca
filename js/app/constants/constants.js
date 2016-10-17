@@ -74,7 +74,7 @@ export const MAP_BB_COORDS = {
 };
 
 export const CAROUSEL_CONFIG = {
-  infinite      : true,
+  infinite      : false,
   speed         : 500,
   slidesToShow  : 4,
   slidesToScroll: 1,
