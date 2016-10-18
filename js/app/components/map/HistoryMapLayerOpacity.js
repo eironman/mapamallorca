@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { MAP_INITIAL_OPACITY } from '../../constants/constants';
 
 /**
 * Displays in the map the opacity selector
@@ -11,7 +12,7 @@ export default class HistoryMapLayerOpacity extends Component {
   }
 
   setDefaultValue() {
-    $("#opacity").val(0.8);
+    $("#opacity").val(MAP_INITIAL_OPACITY);
   }
 
   componentDidUpdate() {
@@ -24,7 +25,7 @@ export default class HistoryMapLayerOpacity extends Component {
 
   render() {
 
-    this.props.layer.setOpacity(0.8);
+    this.props.layer.setOpacity(MAP_INITIAL_OPACITY);
 
     return (
       <div id="opacity-container">

@@ -33,13 +33,14 @@ export function menuReducer(state = mapInitialState, action) {
 
     case MENU_ACTIONS.TOGGLE_MAP:
       let newMap = action.map;
-      showMapsMenu = false;
-      showPoiMenu = false;
       if (state.mapSelected === newMap) {
         newMap = null;
         showPoiMenu = state.showPoiMenu;
-        showMapsMenu = true;
+      } else {
+        showMapsMenu = false;
+        showPoiMenu = false;
       }
+
       return Object.assign({}, state, {
         mapSelected: newMap,
         showMapsMenu,
@@ -48,13 +49,14 @@ export function menuReducer(state = mapInitialState, action) {
 
     case MENU_ACTIONS.TOGGLE_POI:
       let newPoi = action.poi;
-      showMapsMenu = false;
-      showPoiMenu = false;
       if (state.poiSelected === newPoi) {
         newPoi = null;
         showMapsMenu = state.showMapsMenu;
-        showPoiMenu = true;
+      } else {
+        showMapsMenu = false;
+        showPoiMenu = false;
       }
+
       return Object.assign({}, state, {
         poiSelected: newPoi,
         showMapsMenu,

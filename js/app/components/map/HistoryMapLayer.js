@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import HistoryMapLayerOpacity from './HistoryMapLayerOpacity';
-import { PALMA_LAT, PALMA_LNG, MAP_BB_COORDS } from '../../constants/constants';
+import { MAP_INITIAL_OPACITY, PALMA_LAT, PALMA_LNG, MAP_BB_COORDS } from '../../constants/constants';
 
 /**
 * Displays in the map the layer of the year selected
@@ -44,7 +44,7 @@ export default class HistoryMapLayer extends Component {
         {
           minZoom: 14,
           maxZoom: 18,
-          opacity: 0.8,
+          opacity: MAP_INITIAL_OPACITY,
           bounds
         }
       ).addTo(this.props.mapInstance);
@@ -52,8 +52,8 @@ export default class HistoryMapLayer extends Component {
       // Move layer under possible POIs displayed
       this.yearLayer.bringToBack();
 
-      // TODO: Not sure if moving the map is a good idea, try usability first
-      // this.repositionMap();      
+      // Position map to show the map selected
+      this.repositionMap();      
 
     } else {
       this.yearLayer = null;

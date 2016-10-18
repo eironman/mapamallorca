@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { togglePoi, togglePoiMenu } from '../../actions/menuActions';
 import { hideFullScreenMessage } from '../../actions/appActions';
 import Carousel from 'react-slick';
-import CarouselSlide from './CarouselSlide';
+import TallestBuildingsCarousel from './carousels/TallestBuildingsCarousel';
+import GeneralPoiCarousel from './carousels/GeneralPoiCarousel';
+import CarouselSlide from './carousels/CarouselSlide';
 import { CAROUSEL_CONFIG, POIS } from '../../constants/constants';
 
 /**
@@ -11,49 +13,64 @@ import { CAROUSEL_CONFIG, POIS } from '../../constants/constants';
 **/
 class PoiMenuController extends Component {
 
+  constructor()
+  {
+    super();
+    this.state = { showBuildingsMenu: false }
+  }
+
+  handleCloseBuildingsMenu()
+  {
+    this.setState({ showBuildingsMenu: false });
+  }
+
+  handleOpenBuildingsMenu()
+  {
+    this.setState({ showBuildingsMenu: true });
+  }
+
   // Select a poi
-  handlePoiSelect(poi) {
+  handlePoiSelect(poi)
+  {
     this.props.dispatch(togglePoi(poi));
     this.props.dispatch(hideFullScreenMessage());
   }
 
   // Show/hide menu
-  onTriggerClick() {
+  handleToggleMenu() {
     this.props.dispatch(togglePoiMenu());
   }
 
   render() {
-    const carousel = (
-      <Carousel {...CAROUSEL_CONFIG}>
-        <CarouselSlide
-          onClick={ () => this.handlePoiSelect(POIS.CITY_WALL) }
-          selected={ POIS.CITY_WALL === this.props.poiSelected }
-          src={'/img/muralla.jpg'}
+    
+    let carousel;
+    if (this.state.showBuildingsMenu) {
+
+      carousel = (
+        <TallestBuildingsCarousel
+          poiSelected={ this.props.poiSelected }
+          onPoiSelect={ (poi) => { this.handlePoiSelect(poi) } }
+          onClose={ () => { this.handleCloseBuildingsMenu() } }
         />
-        <CarouselSlide
-          onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT_1865) }
-          selected={ POIS.BULLFIGHT_1865 === this.props.poiSelected }
-          src={'/img/plazatoros.jpg'}
+      );
+
+    } else {
+
+      carousel = (
+        <GeneralPoiCarousel
+          poiSelected={ this.props.poiSelected }
+          onPoiSelect={ (poi) => { this.handlePoiSelect(poi) } }
+          onTallBuildingsSelect={ () => { this.handleOpenBuildingsMenu() } }
         />
-        <CarouselSlide
-          onClick={ () => this.handlePoiSelect(POIS.BULLFIGHT) }
-          selected={ POIS.BULLFIGHT === this.props.poiSelected }
-          src={'/img/coliseo.jpg'}
-        />
-        <CarouselSlide
-          onClick={ () => this.handlePoiSelect(POIS.WATER_WINDMILLS) }
-          selected={ POIS.WATER_WINDMILLS === this.props.poiSelected }
-          src={'/img/molinos.jpg'}
-        />
-      </Carousel>
-    );
+      );
+    }
 
     return (
       <div>
         <div className="menuTag">
           <div
             className="menuTrigger"
-            onClick={ () => this.onTriggerClick() }
+            onClick={ () => this.handleToggleMenu() }
           >
             PUNTOS DE INTERÉS
           </div>

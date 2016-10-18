@@ -48,6 +48,8 @@ export const MAPS = {
   SAN_CARLOS    : 3
 };
 
+export const MAP_INITIAL_OPACITY = 0.9;
+
 // Bounding box of the map selected
 export const MAP_BB_COORDS = {
   // MAPS.CIVITAS
@@ -74,17 +76,16 @@ export const MAP_BB_COORDS = {
 };
 
 export const CAROUSEL_CONFIG = {
-  infinite      : false,
-  speed         : 500,
+  infinite      : true,
+  speed         : 300,
   slidesToShow  : 4,
   slidesToScroll: 1,
   adaptiveHeight: false,
-  variableWidth : true,
+  variableWidth : false,
   responsive    : [
     {
       breakpoint: 300,
       settings  : {
-        infinite      : false,
         slidesToShow  : 1,
         slidesToScroll: 1
       }
@@ -92,7 +93,6 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 400,
       settings  : {
-        infinite      : false,
         slidesToShow  : 2,
         slidesToScroll: 1
       }
@@ -100,7 +100,6 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 600,
       settings  : {
-        infinite      : false,
         slidesToShow  : 3,
         slidesToScroll: 1
       }
@@ -108,7 +107,6 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 800,
       settings  : {
-        infinite      : false,
         slidesToShow  : 3,
         slidesToScroll: 1
       }
