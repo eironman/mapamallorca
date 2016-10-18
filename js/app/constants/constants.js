@@ -57,21 +57,32 @@ export const MAP_BB_COORDS = {
     lat_ne: 39.5773216175,
     lng_ne: 2.657200098,
     lat_sw: 39.5639486812,
-    lng_sw: 2.6370191574
+    lng_sw: 2.6370191574,
+    zoom  : 16
   },
   // DEFENSA_BAHIA
   1: {
     lat_ne: 39.589223,
     lng_ne: 2.564834,
     lat_sw: 39.517762,
-    lng_sw: 2.686047
+    lng_sw: 2.686047,
+    zoom  : 14
   },
   // ALCANTARA_PENA
   2: {
     lat_ne: 39.5773216175,
     lng_ne: 2.657200098,
     lat_sw: 39.5639486812,
-    lng_sw: 2.6370191574
+    lng_sw: 2.6370191574,
+    zoom  : 16
+  },
+  // SAN_CARLOS
+  3: {
+    lat_ne: 39.549666,
+    lng_ne: 2.620902,
+    lat_sw: 39.544484,
+    lng_sw: 2.626732,
+    zoom  : 17
   }
 };
 

@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import HistoryMapLayerOpacity from './HistoryMapLayerOpacity';
-import { MAP_INITIAL_OPACITY, PALMA_LAT, PALMA_LNG, MAP_BB_COORDS } from '../../constants/constants';
+import { MAPS, MAP_INITIAL_OPACITY, MAP_BB_COORDS } from '../../constants/constants';
 
 /**
 * Displays in the map the layer of the year selected
 **/
-export default class HistoryMapLayer extends Component {
+class HistoryMapLayer extends Component {
 
   constructor()
   {
@@ -14,10 +15,16 @@ export default class HistoryMapLayer extends Component {
   }
 
   // Centers map to the year map selected
-  repositionMap()
+  repositionMap(bounds)
   {
-    this.props.mapInstance.panTo(new L.LatLng(PALMA_LAT, PALMA_LNG));
-    this.props.mapInstance.setZoom(16);
+    // Fit map bounds
+    this.props.mapInstance.fitBounds(bounds);
+
+    // Apply zoom
+    // There is a timeout because fitbounds is asynchronous
+    setTimeout(() => {
+      this.props.mapInstance.setZoom(MAP_BB_COORDS[this.props.mapSelected].zoom);
+    }, 300);
   }
 
   // Shows the map of the year selected
@@ -53,7 +60,7 @@ export default class HistoryMapLayer extends Component {
       this.yearLayer.bringToBack();
 
       // Position map to show the map selected
-      this.repositionMap();      
+      this.repositionMap(bounds);      
 
     } else {
       this.yearLayer = null;
@@ -78,6 +85,15 @@ export default class HistoryMapLayer extends Component {
 
 // Class properties
 HistoryMapLayer.propTypes = {
-  mapSelected: PropTypes.number,
   mapInstance: PropTypes.object
 };
+
+
+// Connect class to redux
+const mapStateToProps = (state) => {
+  return {
+    mapSelected: state.menuReducer.mapSelected
+  };
+};
+
+export default connect(mapStateToProps)(HistoryMapLayer);

@@ -26,6 +26,11 @@ export default class MapCarousel extends Component {
           selected={ MAPS.ALCANTARA_PENA === this.props.mapSelected }
           src={'/img/1869.jpg'}
         />
+        <CarouselSlide
+          onClick={ () => this.props.onMapSelect(MAPS.SAN_CARLOS) }
+          selected={ MAPS.SAN_CARLOS === this.props.mapSelected }
+          src={'/img/san_carlos.jpg'}
+        />
       </Carousel>
     );
   }

@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import PoiFactory from '../../helpers/PoiFactory';
 
 /**
 * Displays in the map the points of interest selected
 **/
-export default class PoiLayer extends Component {
+class PoiLayer extends Component {
 
   render()
   {
@@ -15,6 +16,14 @@ export default class PoiLayer extends Component {
 
 // Class properties
 PoiLayer.propTypes = {
-  poiSelected: PropTypes.number,
   mapInstance: PropTypes.object
 };
+
+// Connect class to redux
+const mapStateToProps = (state) => {
+  return {
+    poiSelected: state.menuReducer.poiSelected
+  };
+};
+
+export default connect(mapStateToProps)(PoiLayer);
