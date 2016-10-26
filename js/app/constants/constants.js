@@ -97,6 +97,7 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 300,
       settings  : {
+        arrows        : true,
         slidesToShow  : 1,
         slidesToScroll: 1
       }
@@ -104,6 +105,7 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 400,
       settings  : {
+        arrows        : true,
         slidesToShow  : 2,
         slidesToScroll: 1
       }
@@ -111,6 +113,7 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 600,
       settings  : {
+        arrows        : true,
         slidesToShow  : 3,
         slidesToScroll: 1
       }
@@ -118,6 +121,7 @@ export const CAROUSEL_CONFIG = {
     {
       breakpoint: 800,
       settings  : {
+        arrows        : true,
         slidesToShow  : 3,
         slidesToScroll: 1
       }
