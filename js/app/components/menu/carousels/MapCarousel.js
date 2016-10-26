@@ -9,8 +9,13 @@ import { MAPS, CAROUSEL_CONFIG, POIS } from '../../../constants/constants';
 export default class MapCarousel extends Component {
 
   render() {
+    
+    const config = Object.assign({}, CAROUSEL_CONFIG);
+    config.infinite = false;
+    config.arrows = false;
+
     return (
-      <Carousel {...CAROUSEL_CONFIG}>
+      <Carousel {...config}>
         <CarouselSlide
           onClick={ () => this.props.onMapSelect(MAPS.CIVITAS) }
           selected={ MAPS.CIVITAS === this.props.mapSelected }

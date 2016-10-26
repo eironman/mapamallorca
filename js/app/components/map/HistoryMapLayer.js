@@ -24,7 +24,7 @@ class HistoryMapLayer extends Component {
     // There is a timeout because fitbounds is asynchronous
     setTimeout(() => {
       this.props.mapInstance.setZoom(MAP_BB_COORDS[this.props.mapSelected].zoom);
-    }, 300);
+    }, 400);
   }
 
   // Shows the map of the year selected
