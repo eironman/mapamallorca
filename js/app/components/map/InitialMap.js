@@ -19,10 +19,15 @@ export default class InitialMap extends Component {
   initMap()
   {
     this.mapInstance = new L.Map('map', {
-      zoomControl: true,
+      zoomControl: false,
       center     : [this.props.lat, this.props.lng],
       zoom       : 16
     });
+    
+    // Zoom controls
+    L.control.zoom({
+         position:'bottomright'
+    }).addTo(this.mapInstance);
 
     // Base map
     var ggl = new L.Google('HYBRID');
