@@ -12,7 +12,10 @@ class MapsMenuController extends Component {
   createMenuOption(mapId, text) {
 
     const tag = (
-      <li className={ (mapId === this.props.mapSelected) ? 'selected' : '' }>
+      <li
+        key={ 'm_' + mapId }
+        className={ (mapId === this.props.mapSelected) ? 'selected' : '' }
+      >
         <p onClick={ () => this.handleMapSelect(mapId) }>&gt; {text}</p>
       </li>
     );

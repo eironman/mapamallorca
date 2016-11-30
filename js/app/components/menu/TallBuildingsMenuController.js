@@ -12,7 +12,10 @@ class TallBuildingsMenuController extends Component {
   createMenuOption(poiId, text) {
 
     const tag = (
-      <li className={ (poiId === this.props.poiSelected) ? 'selected' : '' }>
+      <li
+        key={ 'p_' + poiId }
+        className={ (poiId === this.props.poiSelected) ? 'selected' : '' }
+      >
         <p onClick={ () => this.handlePoiSelect(poiId) }>&gt; {text}</p>
       </li>
     );
@@ -40,7 +43,7 @@ class TallBuildingsMenuController extends Component {
         { this.createMenuOption(POIS.GABRIEL_ROCA, 'Gabriel Roca (56m)') }
         { this.createMenuOption(POIS.TORRE_HORNABEQUE, 'Torre Hornabeque (53m)') }
         { this.createMenuOption(POIS.SANTANDER_BUILDING, 'Edificio Santander (53m)') }
-        { this.createMenuOption(POIS.SANTANDER_BUILDING, 'Complejo Pil·larí (52m)') }
+        { this.createMenuOption(POIS.COMPLEJO_PILLARI, 'Complejo Pil·larí (52m)') }
         { this.createMenuOption(POIS.CREDITO_BALEAR, 'Crédito Balear (51m)') }
         { this.createMenuOption(POIS.TORRE_MALLORCA, 'Torre Mallorca (51m)') }
       </ul>

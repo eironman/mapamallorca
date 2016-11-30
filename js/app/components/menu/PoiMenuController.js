@@ -12,7 +12,10 @@ class PoiMenuController extends Component {
   createMenuOption(poiId, text) {
 
     const tag = (
-      <li className={ (poiId === this.props.poiSelected) ? 'selected' : '' }>
+      <li
+        key={ 'p_' + poiId }
+        className={ (poiId === this.props.poiSelected) ? 'selected' : '' }
+      >
         <p onClick={ () => this.handlePoiSelect(poiId) }>&gt; {text}</p>
       </li>
     );
