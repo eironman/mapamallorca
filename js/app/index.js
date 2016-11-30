@@ -8,12 +8,23 @@ import reducer from './reducers/main';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import MapController from './components/map/MapController';
+import MenuController from './components/menu/MenuController';
 import MapsMenuController from './components/menu/MapsMenuController';
 import PoiMenuController from './components/menu/PoiMenuController';
 import FullScreenMessage from './components/FullScreenMessage';
 
 let store = createStore(reducer);
 
+
+// Menu
+ReactDOM.render(
+  <Provider store={store}>
+    <MenuController />
+  </Provider>,
+  document.getElementById('menuContainer')
+);
+
+/*
 // Maps menu
 ReactDOM.render(
   <Provider store={store}>
@@ -29,6 +40,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('poiMenu')
 );
+*/
 
 // Full screen message
 ReactDOM.render(

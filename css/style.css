@@ -3,16 +3,22 @@
   margin: 0;
 }
 body {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+  font-family: 'Yrsa', serif;
 }
 ul {
   list-style: none;
 }
 p {
-  font-size: 15px;
+  font-size: 17px;
+  color: #232323;
 }
 h2 {
-  font-size: 17px;
+  font-size: 19px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: normal;
 }
 html, body, #app, #mapBox, #map, .h100{
   height: 100%;
@@ -37,7 +43,7 @@ html, body, #app, #mapBox, #map, .h100{
 }
 #infoCard {
   position: fixed;
-  top: 4px;
+  top: 0px;
   left: 0;
   width: 100%;
   background-color:rgba(255,255,255,0.9);
@@ -74,8 +80,9 @@ html, body, #app, #mapBox, #map, .h100{
 }
 .infoCardContent h2 {
   margin-bottom: 10px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #232323;
   text-transform: uppercase;
+  text-align: center;
 }
 .toggleInfoCard {
   position: absolute;
@@ -90,6 +97,68 @@ html, body, #app, #mapBox, #map, .h100{
 }
 
 /******** menu ********/
+#menuContainer {
+  position: absolute;
+  z-index: 1000001;
+  top: 0;
+  left: 0;
+}
+.openMenu, .closeMenu, #menu p {
+  cursor: pointer;
+}
+.openMenu {
+  position: relative;
+  margin: 10px 0px 0px 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.openMenu img {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+.closeMenu {
+  text-align: right;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  background-color: #bbb;
+}
+.closeMenu img {
+  vertical-align: bottom;
+}
+#menu {
+  background-color: #ffffff;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 256px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -265px;
+  box-shadow: 2px 0px 10px #000;
+}
+#menu h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #232323;
+}
+#menu ul {
+  margin-bottom: 50px;
+}
+#menu li {
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+#menu .separator {
+  margin: 0px auto 20px;
+  border-bottom: 1px solid #444;
+}
+
+
+
 #mapsMenu, #poiMenu {
   position: fixed;
   left: 0;

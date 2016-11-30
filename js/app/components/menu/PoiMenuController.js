@@ -1,92 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { togglePoi, togglePoiMenu } from '../../actions/menuActions';
+import { togglePoi } from '../../actions/menuActions';
 import { hideFullScreenMessage } from '../../actions/appActions';
-import Carousel from 'react-slick';
-import TallestBuildingsCarousel from './carousels/TallestBuildingsCarousel';
-import GeneralPoiCarousel from './carousels/GeneralPoiCarousel';
-import CarouselSlide from './carousels/CarouselSlide';
-import { CAROUSEL_CONFIG, POIS } from '../../constants/constants';
+import { POIS } from '../../constants/constants';
 
 /**
 * Menu to select a poi
 **/
 class PoiMenuController extends Component {
 
-  constructor()
-  {
-    super();
-    this.state = { showBuildingsMenu: false }
-  }
+  createMenuOption(poiId, text) {
 
-  handleCloseBuildingsMenu()
-  {
-    this.setState({ showBuildingsMenu: false });
-  }
+    const tag = (
+      <li className={ (poiId === this.props.poiSelected) ? 'selected' : '' }>
+        <p onClick={ () => this.handlePoiSelect(poiId) }>&gt; {text}</p>
+      </li>
+    );
 
-  handleOpenBuildingsMenu()
-  {
-    this.setState({ showBuildingsMenu: true });
+    return tag;
   }
 
   // Select a poi
-  handlePoiSelect(poi)
-  {
+  handlePoiSelect(poi) {
     this.props.dispatch(togglePoi(poi));
     this.props.dispatch(hideFullScreenMessage());
   }
 
-  // Show/hide menu
-  handleToggleMenu() {
-    this.props.dispatch(togglePoiMenu());
-  }
-
   render() {
     
-    let carousel;
-    if (this.state.showBuildingsMenu) {
-
-      carousel = (
-        <TallestBuildingsCarousel
-          poiSelected={ this.props.poiSelected }
-          onPoiSelect={ (poi) => { this.handlePoiSelect(poi) } }
-          onClose={ () => { this.handleCloseBuildingsMenu() } }
-        />
-      );
-
-    } else {
-
-      carousel = (
-        <GeneralPoiCarousel
-          poiSelected={ this.props.poiSelected }
-          onPoiSelect={ (poi) => { this.handlePoiSelect(poi) } }
-          onTallBuildingsSelect={ () => { this.handleOpenBuildingsMenu() } }
-        />
-      );
-    }
-
     return (
-      <div>
-        <div className="menuTag">
-          <div
-            className="menuTrigger"
-            onClick={ () => this.handleToggleMenu() }
-          >
-            PUNTOS DE INTERÉS
-          </div>
-        </div>
-        { this.props.showPoiMenu ? carousel : null }
-      </div>
+      <ul>
+        { this.createMenuOption(POIS.CITY_WALL, 'Muralla renacentista') }
+        { this.createMenuOption(POIS.BULLFIGHT_1865, 'Plaza de toros (1865)') }
+        { this.createMenuOption(POIS.BULLFIGHT, 'Plaza de toros (actual)') }
+        { this.createMenuOption(POIS.WATER_WINDMILLS, 'Molinos de agua') }
+      </ul>
     );
   }
 }
 
-// Connect class to redux
-const mapStateToProps = (state) => {
-  return {
-    poiSelected: state.menuReducer.poiSelected,
-    showPoiMenu: state.menuReducer.showPoiMenu
-  };
-};
+PoiMenuController.propTypes = {
+  poiSelected: PropTypes.number
+}
 
-export default connect(mapStateToProps)(PoiMenuController);
+// Connect class to redux
+export default connect()(PoiMenuController);

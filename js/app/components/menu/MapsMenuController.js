@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { toggleMap, toggleMapsMenu } from '../../actions/menuActions';
+import { toggleMap } from '../../actions/menuActions';
 import { hideFullScreenMessage } from '../../actions/appActions';
-import Carousel from 'react-slick';
-import MapCarousel from './carousels/MapCarousel';
-import CarouselSlide from './carousels/CarouselSlide';
+import { MAPS } from '../../constants/constants';
 
 /**
 * Menu to select a map
 **/
 class MapsMenuController extends Component {
+
+  createMenuOption(mapId, text) {
+
+    const tag = (
+      <li className={ (mapId === this.props.mapSelected) ? 'selected' : '' }>
+        <p onClick={ () => this.handleMapSelect(mapId) }>&gt; {text}</p>
+      </li>
+    );
+
+    return tag;
+  }
 
   // Select a map
   handleMapSelect(map) {
@@ -17,41 +26,22 @@ class MapsMenuController extends Component {
     this.props.dispatch(hideFullScreenMessage());
   }
 
-  // Show/hide menu
-  handleToggleMenu() {
-    this.props.dispatch(toggleMapsMenu());
-  }
-
   render() {
-    const carousel = (
-      <MapCarousel
-        mapSelected={ this.props.mapSelected }
-        onMapSelect={ (map) => { this.handleMapSelect(map) } }
-      />
-    );
 
     return (
-      <div>
-        { this.props.showMapsMenu ? carousel : null }
-        <div className="menuTag">
-          <div
-            className="menuTrigger"
-            onClick={ () => this.handleToggleMenu() }
-          >
-            MAPAS
-          </div>
-        </div>
-      </div>
+      <ul>
+        { this.createMenuOption(MAPS.CIVITAS, '1644') }
+        { this.createMenuOption(MAPS.ALCANTARA_PENA, '1869') }
+        { this.createMenuOption(MAPS.DEFENSA_BAHIA, 'Defensa de la bahía') }
+        { this.createMenuOption(MAPS.SAN_CARLOS, 'Baluarte de San Carlos') }
+      </ul>
     );
   }
 }
 
-// Connect class to redux
-const mapStateToProps = (state) => {
-  return {
-    mapSelected : state.menuReducer.mapSelected,
-    showMapsMenu: state.menuReducer.showMapsMenu
-  };
-};
+MapsMenuController.propTypes = {
+  mapSelected: PropTypes.number
+}
 
-export default connect(mapStateToProps)(MapsMenuController);
+// Connect class to redux
+export default connect()(MapsMenuController);
