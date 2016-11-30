@@ -4,7 +4,7 @@ import { APP_ACTIONS } from '../constants/actions';
 * Initial state of the app
 **/
 const appInitialState = {
-  showFullScreenMessage: true
+  showInfoMessage: true
 };
 
 /**
@@ -14,9 +14,14 @@ export function appReducer(state = appInitialState, action) {
 
   switch (action.type) {
 
-    case APP_ACTIONS.HIDE_FULL_SCREEN_MESSAGE:
+    case APP_ACTIONS.HIDE_INFO_MESSAGE:
       return Object.assign({}, state, {
-        showFullScreenMessage: false
+        showInfoMessage: false
+      });
+
+    case APP_ACTIONS.SHOW_INFO_MESSAGE:
+      return Object.assign({}, state, {
+        showInfoMessage: true
       });
 
     default:

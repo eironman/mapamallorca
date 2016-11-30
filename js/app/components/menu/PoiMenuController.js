@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { closeMenu, togglePoi } from '../../actions/menuActions';
-import { hideFullScreenMessage } from '../../actions/appActions';
+import { hideInfoMessage } from '../../actions/appActions';
 import { POIS } from '../../constants/constants';
 
 /**
@@ -24,6 +24,7 @@ class PoiMenuController extends Component {
   handlePoiSelect(poi) {
     this.props.dispatch(togglePoi(poi));
     this.props.dispatch(closeMenu());
+    this.props.dispatch(hideInfoMessage());
   }
 
   render() {

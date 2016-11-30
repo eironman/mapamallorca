@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { closeMenu, toggleMap } from '../../actions/menuActions';
-import { hideFullScreenMessage } from '../../actions/appActions';
+import { hideInfoMessage } from '../../actions/appActions';
 import { MAPS } from '../../constants/constants';
 
 /**
@@ -24,6 +24,7 @@ class MapsMenuController extends Component {
   handleMapSelect(map) {
     this.props.dispatch(toggleMap(map));
     this.props.dispatch(closeMenu());
+    this.props.dispatch(hideInfoMessage());
   }
 
   render() {
