@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { hideFullScreenMessage } from '../../actions/appActions';
+import { openMenu, closeMenu } from '../../actions/menuActions';
 import MapsMenuController from './MapsMenuController';
 import PoiMenuController from './PoiMenuController';
 import TallBuildingsMenuController from './TallBuildingsMenuController';
@@ -9,28 +11,47 @@ import TallBuildingsMenuController from './TallBuildingsMenuController';
 **/
 class MenuController extends Component {
 
-  handleCloseMenu() {
+  // Close menu animation
+  hideMenu() {
     $('#menu').animate({
       left: '-265px'
     }, 300);
   }
 
-  handleOpenMenu() {
+  handleCloseMenuClick() {
+    this.props.dispatch(closeMenu());
+  }
+
+  handleOpenMenuClick() {
+    this.props.dispatch(hideFullScreenMessage());
+    this.props.dispatch(openMenu());
+  }
+
+  // Open menu animation
+  showMenu() {
     $('#menu').show().animate({
       left: '0px'
     }, 300);
   }
 
   render() {
+
+    // Show/Hide menu
+    if (this.props.menuOpened) {
+      this.showMenu();
+    } else {
+      this.hideMenu();
+    }
+
     return (
       <div>
-        <p className="openMenu" onClick={ () => this.handleOpenMenu() }>
+        <p className="openMenu" onClick={ () => this.handleOpenMenuClick() }>
           <img src="/img/menu.png" />
         </p>
         <div id="menu">
           <div 
             className="closeMenu"
-            onClick={ () => this.handleCloseMenu() }
+            onClick={ () => this.handleCloseMenuClick() }
           >
             <p>Cerrar <img src="/img/close.png" /></p>
           </div>
@@ -49,6 +70,7 @@ class MenuController extends Component {
 // Connect class to redux
 const mapStateToProps = (state) => {
   return {
+    menuOpened : state.menuReducer.menuOpened,
     mapSelected: state.menuReducer.mapSelected,
     poiSelected: state.menuReducer.poiSelected
   };

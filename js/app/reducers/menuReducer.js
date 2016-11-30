@@ -5,10 +5,9 @@ import { arrayContains, removeFromArray } from '../helpers/arrayHelper';
 * Initial state of the map menu
 **/
 const mapInitialState = {
-  mapSelected : null,
-  poiSelected : null,
-  showMapsMenu: true,
-  showPoiMenu : true
+  menuOpened : false,
+  mapSelected: null,
+  poiSelected: null
 };
 
 /**
@@ -21,46 +20,34 @@ export function menuReducer(state = mapInitialState, action) {
 
   switch (action.type) {
 
-    case MENU_ACTIONS.TOGGLE_MAPS_MENU:
+    case MENU_ACTIONS.OPEN_MENU:
       return Object.assign({}, state, {
-        showMapsMenu: !state.showMapsMenu
+        menuOpened: true
       });
 
-    case MENU_ACTIONS.TOGGLE_POI_MENU:
+    case MENU_ACTIONS.CLOSE_MENU:
       return Object.assign({}, state, {
-        showPoiMenu: !state.showPoiMenu
+        menuOpened: false
       });
 
     case MENU_ACTIONS.TOGGLE_MAP:
       let newMap = action.map;
       if (state.mapSelected === newMap) {
         newMap = null;
-        showPoiMenu = state.showPoiMenu;
-      } else {
-        showMapsMenu = false;
-        showPoiMenu = false;
       }
 
       return Object.assign({}, state, {
-        mapSelected: newMap,
-        showMapsMenu,
-        showPoiMenu
+        mapSelected: newMap
       });
 
     case MENU_ACTIONS.TOGGLE_POI:
       let newPoi = action.poi;
       if (state.poiSelected === newPoi) {
         newPoi = null;
-        showMapsMenu = state.showMapsMenu;
-      } else {
-        showMapsMenu = false;
-        showPoiMenu = false;
       }
 
       return Object.assign({}, state, {
-        poiSelected: newPoi,
-        showMapsMenu,
-        showPoiMenu
+        poiSelected: newPoi
       });
 
     default:

@@ -5,10 +5,10 @@ export const MAP_ACTIONS = {
 
 // Menu actions
 export const MENU_ACTIONS = {
-  TOGGLE_MAP      : 'TOGGLE_MAP',
-  TOGGLE_POI      : 'TOGGLE_POI',
-  TOGGLE_MAPS_MENU: 'TOGGLE_MAPS_MENU',
-  TOGGLE_POI_MENU : 'TOGGLE_POI_MENU'
+  TOGGLE_MAP: 'TOGGLE_MAP',
+  TOGGLE_POI: 'TOGGLE_POI',
+  OPEN_MENU : 'OPEN_MENU',
+  CLOSE_MENU: 'CLOSE_MENU'
 };
 
 // App actions
