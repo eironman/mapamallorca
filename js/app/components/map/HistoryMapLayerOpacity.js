@@ -35,6 +35,7 @@ export default class HistoryMapLayerOpacity extends Component {
           min="0"
           max="1"
           step=".01"
+          className="slider"
           onChange={ (e) => this.onRangeSelect(e) }
         />
       </div>
