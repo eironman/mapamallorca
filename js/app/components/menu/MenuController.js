@@ -13,7 +13,7 @@ class MenuController extends Component {
 
   // Close menu animation
   hideMenu() {
-    $('#menu').animate({
+    $('#menu').velocity({
       left: '-265px'
     }, 300);
   }
@@ -29,7 +29,7 @@ class MenuController extends Component {
 
   // Open menu animation
   showMenu() {
-    $('#menu').show().animate({
+    $('#menu').velocity({
       left: '0px'
     }, 300);
   }
