@@ -35,7 +35,7 @@ class TallBuildingsMenuController extends Component {
         { this.createMenuOption(POIS.CATHEDRAL, 'Catedral (65m)') }
         { this.createMenuOption(POIS.TORRE_ASIMA, 'Torre Asima (64m)') }
         { this.createMenuOption(POIS.TORRES_PORTIXOL, 'Torres del Portixol (56m)') }
-        { this.createMenuOption(POIS.PUIG_ALARO, 'Puid d\'Alaró (56m)') }
+        { this.createMenuOption(POIS.PUIG_ALARO, 'Puig d\'Alaró (56m)') }
         { this.createMenuOption(POIS.GABRIEL_ROCA, 'Gabriel Roca (56m)') }
         { this.createMenuOption(POIS.TORRE_HORNABEQUE, 'Torre Hornabeque (53m)') }
         { this.createMenuOption(POIS.SANTANDER_BUILDING, 'Edificio Santander (53m)') }
