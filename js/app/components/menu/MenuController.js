@@ -55,6 +55,11 @@ class MenuController extends Component {
           >
             <p>Cerrar <img src="/img/close.png" /></p>
           </div>
+          <p className="infoText">
+            <strong>mapamallorca</strong> te permite conocer la historia de Palma a través de sus mapas y construcciones características a lo largo de su historia.
+            Selecciona una época de la ciudad para compararla con la época actual o escoge puntos de interés de la ciudad,
+            tanto actuales como de épocas pasadas. Para cualquier duda o sugerencia escribe un correo a <strong>contacto@mapamallorca.com</strong>
+          </p>
           <h3>MAPAS</h3>
           <MapsMenuController mapSelected={ this.props.mapSelected } />
           <h3>PUNTOS DE INTERÉS</h3>

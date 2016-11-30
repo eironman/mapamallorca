@@ -5,7 +5,7 @@ import { arrayContains, removeFromArray } from '../helpers/arrayHelper';
 * Initial state of the map menu
 **/
 const mapInitialState = {
-  menuOpened : false,
+  menuOpened : true,
   mapSelected: null,
   poiSelected: null
 };
