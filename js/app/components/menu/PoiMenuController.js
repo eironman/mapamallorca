@@ -35,6 +35,7 @@ class PoiMenuController extends Component {
     return (
       <ul>
         { this.createMenuOption(POIS.CITY_WALL, 'Muralla renacentista') }
+        { this.createMenuOption(POIS.CITY_RIVER, 'Sa Riera (recorrido original)') }
         { this.createMenuOption(POIS.BULLFIGHT_1865, 'Plaza de toros (1865)') }
         { this.createMenuOption(POIS.BULLFIGHT, 'Plaza de toros (actual)') }
         { this.createMenuOption(POIS.WATER_WINDMILLS, 'Molinos de agua') }

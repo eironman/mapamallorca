@@ -43,7 +43,7 @@ export default class PoiCartodbBase extends Component {
       });
   }
 
-  // Returns the style for the poi
+  // Returns the default styles for shapes and pois
   poiStyles()
   {
     let styles;

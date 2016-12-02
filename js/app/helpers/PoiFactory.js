@@ -1,6 +1,7 @@
 import React from 'react';
 import { POIS } from '../constants/constants';
 import CityWall from '../components/map/pois/CityWall';
+import CityRiver from '../components/map/pois/CityRiver';
 import Bullfight from '../components/map/pois/Bullfight';
 import Bullfight1865 from '../components/map/pois/Bullfight1865';
 import WaterWindmill from '../components/map/pois/WaterWindmill';
@@ -25,6 +26,9 @@ export default class PoiFactory {
 
     if (poiId === POIS.CITY_WALL) {
       poi = (<CityWall mapInstance={ mapInstance }/>);
+    }
+    if (poiId === POIS.CITY_RIVER) {
+      poi = (<CityRiver mapInstance={ mapInstance }/>);
     }
     if (poiId === POIS.BULLFIGHT) {
       poi = (<Bullfight mapInstance={ mapInstance }/>);

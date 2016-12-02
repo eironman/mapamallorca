@@ -37,7 +37,8 @@ export const POIS = {
   PUIG_ALARO        : 12,
   GABRIEL_ROCA      : 13,
   CREDITO_BALEAR    : 14,
-  TORRE_MALLORCA    : 15
+  TORRE_MALLORCA    : 15,
+  CITY_RIVER        : 16,
 };
 
 // Maps
@@ -84,47 +85,4 @@ export const MAP_BB_COORDS = {
     lng_sw: 2.626732,
     zoom  : 17
   }
-};
-
-export const CAROUSEL_CONFIG = {
-  infinite      : true,
-  speed         : 300,
-  slidesToShow  : 4,
-  slidesToScroll: 1,
-  adaptiveHeight: false,
-  variableWidth : false,
-  responsive    : [
-    {
-      breakpoint: 300,
-      settings  : {
-        arrows        : true,
-        slidesToShow  : 1,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 400,
-      settings  : {
-        arrows        : true,
-        slidesToShow  : 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 600,
-      settings  : {
-        arrows        : true,
-        slidesToShow  : 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 800,
-      settings  : {
-        arrows        : true,
-        slidesToShow  : 3,
-        slidesToScroll: 1
-      }
-    }
-  ]
 };
