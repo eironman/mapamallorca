@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import InfoCard from '../InfoCard';
 import {
   CARTODB_USER,
@@ -18,7 +19,7 @@ export default class PoiCartodbBase extends Component {
     super(props);
     this.poiLayer = null;
     this.sql = new cartodb.SQL({ user: CARTODB_USER });
-    this.query = 'SELECT * FROM ' + props.cartodbTable + ' WHERE cartodb_id = ' + props.poiId;
+    this.query = 'SELECT * FROM ' + props.cartodbTable + ' WHERE cartodb_id IN (' + props.poiId.join(', ') + ')';
     // Shape or spot
     this.isShape = (this.props.cartodbTable === CARTODB_SHAPE_TABLE);
   }
@@ -119,7 +120,7 @@ export default class PoiCartodbBase extends Component {
 }
 
 PoiCartodbBase.propTypes = {
-  poiId       : PropTypes.number,
+  poiId       : PropTypes.array,
   mapInstance : PropTypes.object,
   cartodbTable: PropTypes.string
 }

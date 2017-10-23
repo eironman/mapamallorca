@@ -8,6 +8,6 @@ export default class PuigAlaro extends PoiCartodbBase {
 
 // Id in cartoDB
 PuigAlaro.defaultProps = {
-  poiId       : 10,
+  poiId       : [10],
   cartodbTable: CARTODB_SPOT_TABLE
 }

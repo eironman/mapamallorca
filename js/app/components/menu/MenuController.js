@@ -43,7 +43,7 @@ class MenuController extends Component {
         <p className="infoText">
           <strong>mapamallorca</strong> te permite conocer la historia de Palma a través de sus mapas y construcciones características a lo largo de su historia.
           Selecciona una época de la ciudad para compararla con la época actual o escoge puntos de interés de la ciudad,
-          tanto actuales como de épocas pasadas. Para cualquier duda o sugerencia escribe un correo a <strong>contacto@mapamallorca.com</strong>
+          tanto actuales como de épocas pasadas. Para cualquier duda o sugerencia escribe un correo a <strong>info@mapamallorca.com</strong>
         </p>
       );
     } else {

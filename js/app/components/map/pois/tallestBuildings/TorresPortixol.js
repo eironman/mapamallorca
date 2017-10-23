@@ -8,6 +8,6 @@ export default class TorresPortixol extends PoiCartodbBase {
 
 // Id in cartoDB
 TorresPortixol.defaultProps = {
-  poiId       : 9,
+  poiId       : [9],
   cartodbTable: CARTODB_SPOT_TABLE
 }

@@ -8,6 +8,6 @@ export default class Airport extends PoiCartodbBase {
 
 // Id in cartoDB
 Airport.defaultProps = {
-  poiId       : 3,
+  poiId       : [3],
   cartodbTable: CARTODB_SPOT_TABLE
 }

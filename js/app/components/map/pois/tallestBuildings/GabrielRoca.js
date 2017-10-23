@@ -8,6 +8,6 @@ export default class GabrielRoca extends PoiCartodbBase {
 
 // Id in cartoDB
 GabrielRoca.defaultProps = {
-  poiId       : 11,
+  poiId       : [11],
   cartodbTable: CARTODB_SPOT_TABLE
 }

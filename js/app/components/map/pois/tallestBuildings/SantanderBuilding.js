@@ -8,6 +8,6 @@ export default class SantanderBuilding extends PoiCartodbBase {
 
 // Id in cartoDB
 SantanderBuilding.defaultProps = {
-  poiId       : 7,
+  poiId       : [7],
   cartodbTable: CARTODB_SPOT_TABLE
 }

@@ -13,7 +13,7 @@ export const INFOWINDOW_TEMPLATE =
     '</div>' +
     '<div class="cartodb-popup-content-wrapper">' +
       '<div class="cartodb-popup-content">' +
-        '<p><pre>{{description}}</pre></p>' +
+        '<p>{{description}}</p>' +
       '</div>' +
     '</div>' +
     '<div class="cartodb-popup-tip-container">' +

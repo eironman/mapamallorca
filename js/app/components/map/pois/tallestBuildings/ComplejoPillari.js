@@ -8,6 +8,6 @@ export default class ComplejoPillari extends PoiCartodbBase {
 
 // Id in cartoDB
 ComplejoPillari.defaultProps = {
-  poiId       : 8,
+  poiId       : [8],
   cartodbTable: CARTODB_SPOT_TABLE
 }

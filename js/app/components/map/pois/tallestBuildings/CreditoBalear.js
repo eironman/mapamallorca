@@ -8,6 +8,6 @@ export default class CreditoBalear extends PoiCartodbBase {
 
 // Id in cartoDB
 CreditoBalear.defaultProps = {
-  poiId       : 12,
+  poiId       : [12],
   cartodbTable: CARTODB_SPOT_TABLE
 }

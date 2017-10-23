@@ -8,6 +8,6 @@ export default class TorreMallorca extends PoiCartodbBase {
 
 // Id in cartoDB
 TorreMallorca.defaultProps = {
-  poiId       : 13,
+  poiId       : [13],
   cartodbTable: CARTODB_SPOT_TABLE
 }

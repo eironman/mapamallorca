@@ -11,6 +11,6 @@ export default class TorreForti extends PoiCartodbBase {
 
 // Id in cartoDB
 TorreForti.defaultProps = {
-  poiId       : 1,
+  poiId       : [1],
   cartodbTable: CARTODB_SPOT_TABLE
 }

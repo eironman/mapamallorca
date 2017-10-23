@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import PoiCartodbBase from './PoiCartodbBase';
 import { CARTODB_SHAPE_TABLE } from '../../../constants/constants';
 
@@ -11,6 +11,6 @@ export default class Bullfight1865 extends PoiCartodbBase {
 
 // Id in cartoDB
 Bullfight1865.defaultProps = {
-  poiId       : 8,
+  poiId       : [8],
   cartodbTable: CARTODB_SHAPE_TABLE
 }

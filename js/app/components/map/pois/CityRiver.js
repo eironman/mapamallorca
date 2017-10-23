@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import PoiCartodbBase from './PoiCartodbBase';
 import { CARTODB_SHAPE_TABLE } from '../../../constants/constants';
 
@@ -7,7 +7,6 @@ import { CARTODB_SHAPE_TABLE } from '../../../constants/constants';
 **/
 export default class CityRiver extends PoiCartodbBase {
 
-  // Returns the default styles for shapes and pois
   poiStyles()
   {
     const styles =
@@ -25,6 +24,6 @@ export default class CityRiver extends PoiCartodbBase {
 
 // Id in cartoDB
 CityRiver.defaultProps = {
-  poiId       : 9,
+  poiId       : [9, 12, 13],
   cartodbTable: CARTODB_SHAPE_TABLE
 }

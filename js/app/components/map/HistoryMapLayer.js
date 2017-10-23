@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HistoryMapLayerOpacity from './HistoryMapLayerOpacity';
 import { MAPS, MAP_INITIAL_OPACITY, MAP_BB_COORDS } from '../../constants/constants';

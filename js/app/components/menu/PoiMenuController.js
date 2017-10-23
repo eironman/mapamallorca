@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { closeMenu, togglePoi } from '../../actions/menuActions';
 import { hideInfoMessage } from '../../actions/appActions';
@@ -16,18 +17,11 @@ class PoiMenuController extends Component {
         key={ 'p_' + poiId }
         className={ (poiId === this.props.poiSelected) ? 'selected' : '' }
       >
-        <p onClick={ () => this.handlePoiSelect(poiId) }>&gt; {text}</p>
+        <p onClick={ () => this.props.onPoiSelect(poiId) }>&gt; {text}</p>
       </li>
     );
 
     return tag;
-  }
-
-  // Select a poi
-  handlePoiSelect(poi) {
-    this.props.dispatch(togglePoi(poi));
-    this.props.dispatch(closeMenu());
-    this.props.dispatch(hideInfoMessage());
   }
 
   render() {
@@ -48,5 +42,15 @@ PoiMenuController.propTypes = {
   poiSelected: PropTypes.number
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    onPoiSelect: poi => {
+      dispatch(togglePoi(poi));
+      dispatch(closeMenu());
+      dispatch(hideInfoMessage());
+    }
+  }
+}
+
 // Connect class to redux
-export default connect()(PoiMenuController);
+export default connect(null, mapDispatchToProps)(PoiMenuController);
